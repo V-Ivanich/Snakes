@@ -2,9 +2,9 @@
 const hedSnake = document.querySelector('.heads'),
   pole = document.querySelector('.container'),
   btn = document.querySelector('.btnStart'),
-  btnSt = document.querySelector('.btnStop'),
-  hori = document.querySelector('.horizont'),
-  vert = document.querySelector('.vertikal');
+  btnSt = document.querySelector('.btnStop');
+
+
 
 let time,
   flag = 1,
