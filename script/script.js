@@ -1,10 +1,9 @@
 
 const hedSnake = document.querySelector('.heads'),
+  body_1 = document.querySelector('.body1'),
   pole = document.querySelector('.container'),
   btn = document.querySelector('.btnStart'),
   btnSt = document.querySelector('.btnStop');
-
-
 
 let time,
   flag = 1,
@@ -12,7 +11,7 @@ let time,
   posV = 190;
 
 btn.addEventListener('click', () => { //? старт
-  time = setInterval(frame, 15);
+  time = setInterval(frame, 20);
   frame();
 })
 
@@ -24,26 +23,33 @@ function frame() {
   switch (flag) {
     case 1:
       if (posH == 400) posH = -20;
-      posH++;
+      posH += 2;
       hedSnake.style.left = posH + 'px';
+      body_1.style.left = posH - 21 + 'px';
+      body_1.style.top = posV + 'px';
       break;
     case 2:
       if (posV == 400) posV = -20;
-      posV++;
+      posV += 2;
       hedSnake.style.top = posV + 'px';
+      body_1.style.top = posV - 21 + 'px';
+      body_1.style.left = posH + 'px';
       break;
     case 3:
       if (posH == -20) posH = 400;
-      posH--;
+      posH -= 2;
       hedSnake.style.left = posH + 'px';
+      body_1.style.left = posH + 21 + 'px';
+      body_1.style.top = posV + 'px';
       break;
     case 4:
       if (posV == -20) posV = 400;
-      posV--;
+      posV -= 2;
       hedSnake.style.top = posV + 'px';
+      body_1.style.top = posV + 21 + 'px';
+      body_1.style.left = posH + 'px';
       break;
   }
-
 }
 
 
@@ -58,3 +64,6 @@ document.onkeydown = function (event) {
 }
 
 
+// const massiv = [];
+// let pole = document.querySelector('#pole');
+// let ctx = pole.getContext('2d');
