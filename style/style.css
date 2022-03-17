@@ -24,12 +24,11 @@ html {
   width: 20px;
   height: 20px;
   background-color: burlywood;
+  transition: all .1s ease;
 }
 .kub_activ {
-  background-color: darkcyan
-  
-  
-  ;
+  background-color: darkcyan;
+  transition: all .2s ease;
 }
 .heads {
   background-color: brown;

@@ -3,6 +3,13 @@ const pole = document.querySelector('.container'),
   btn = document.querySelector('.btnStart'),
   btnSt = document.querySelector('.btnStop');
 
+let posMass = [
+  [10, 2],
+  [10, 1],
+  [10, 0],
+];//! позиции змеи
+
+
 const massiv = [];
 for (let i = 0; i < 20; i++) {
   massiv.push([0]);
@@ -20,60 +27,86 @@ for (let i = 0; i < 20; i++) {
 }
 console.log(massiv);
 
-// let time,
-//   flag = 1,
-//   posH = 0,
-//   posV = 190;
+let time,
+  legthSnake = 3,
+  flag = 1,
+  posCol = 2,
+  posRow = 10;
+hedSnake = massiv[posRow][posCol];
+hedSnake.classList.add('kub_activ');
+hedSnake = massiv[posRow][posCol - 1];
+hedSnake.classList.add('kub_activ');
+hedSnake = massiv[posRow][posCol - 2];
+hedSnake.classList.add('kub_activ');
 
-// btn.addEventListener('click', () => { //? старт
-//   time = setInterval(frame, 20);
-//   frame();
-// })
+btn.addEventListener('click', () => { //? старт
+  time = setInterval(frame, 250);
+  frame();
+})
 
-// btnSt.addEventListener('click', () => { //? стоп
-//   clearInterval(time);
-// })
+btnSt.addEventListener('click', () => { //? стоп
+  clearInterval(time);
+})
 
-// function frame() {
-//   switch (flag) {
-//     case 1:
-//       if (posH == 400) posH = -20;
-//       posH += 2;
-//       hedSnake.style.left = posH + 'px';
-//       body_1.style.left = posH - 21 + 'px';
-//       body_1.style.top = posV + 'px';
-//       break;
-//     case 2:
-//       if (posV == 400) posV = -20;
-//       posV += 2;
-//       hedSnake.style.top = posV + 'px';
-//       body_1.style.top = posV - 21 + 'px';
-//       body_1.style.left = posH + 'px';
-//       break;
-//     case 3:
-//       if (posH == -20) posH = 400;
-//       posH -= 2;
-//       hedSnake.style.left = posH + 'px';
-//       body_1.style.left = posH + 21 + 'px';
-//       body_1.style.top = posV + 'px';
-//       break;
-//     case 4:
-//       if (posV == -20) posV = 400;
-//       posV -= 2;
-//       hedSnake.style.top = posV + 'px';
-//       body_1.style.top = posV + 21 + 'px';
-//       body_1.style.left = posH + 'px';
-//       break;
-//   }
-// }
+//? фун-я направления движения,
+//? в зависимости от нажатой клавиши
+function frame() {
+  switch (flag) {
+    case 1:
+      if (posCol == 19) posCol = 0;
+      resetClass(1, 0, 1);
+      break;
+    case 2:
+      if (posRow == 19) posRow = 0;
+      resetClass(1, 1, 0);
+      break;
+    case 3:
+      if (posCol == 0) posCol = 19;
+      resetClass(0, 0, 1);
+      break;
+    case 4:
+      if (posRow == 0) posRow = 19;
+      resetClass(0, 1, 0);
+      break;
+  }
+}
+
+//? смена класса у div-ов
+function resetClass(flagSet, pos_1, pos_2) {
+  let moveData;
+  if (flagSet == 1) {
+    posRow += pos_1;
+    posCol += pos_2;
+  }
+  else {
+    posRow -= pos_1;
+    posCol -= pos_2;
+  }
+  let x = posMass[posMass.length - 1][0];
+  let y = posMass[posMass.length - 1][1];
+  hedSnake = massiv[x][y];
+  hedSnake.classList.remove('kub_activ');
+
+  for (let i = 1; i <= posMass.length - 1; i++) {
+    moveData = posMass[posMass.length - 1 - i];
+    posMass[posMass.length - i] = moveData;
+  }
+  posMass[0] = [posRow, posCol];
 
 
-// document.onkeydown = function (event) {
-//   if (event.key == 'ArrowLeft') flag = 3;
+  hedSnake = massiv[posRow][posCol];
+  hedSnake.classList.add('kub_activ');
 
-//   if (event.key == 'ArrowRight') flag = 1;
 
-//   if (event.key == 'ArrowUp') flag = 4;
+}
 
-//   if (event.key == 'ArrowDown') flag = 2;
-// }
+//? сканирование клавиш, "стрелок"
+document.onkeydown = function (event) {
+  if (event.key == 'ArrowLeft') flag = 3;
+
+  if (event.key == 'ArrowRight') flag = 1;
+
+  if (event.key == 'ArrowUp') flag = 4;
+
+  if (event.key == 'ArrowDown') flag = 2;
+}
