@@ -53,19 +53,19 @@ btnSt.addEventListener('click', () => { //? стоп
 function frame() {
   switch (flag) {
     case 1:
-      if (posCol == 19) posCol = 0;
+      if (posCol == 19) posCol = -1;
       resetClass(1, 0, 1);
       break;
     case 2:
-      if (posRow == 19) posRow = 0;
+      if (posRow == 19) posRow = -1;
       resetClass(1, 1, 0);
       break;
     case 3:
-      if (posCol == 0) posCol = 19;
+      if (posCol == 0) posCol = 20;
       resetClass(0, 0, 1);
       break;
     case 4:
-      if (posRow == 0) posRow = 19;
+      if (posRow == 0) posRow = 20;
       resetClass(0, 1, 0);
       break;
   }
@@ -93,6 +93,8 @@ function resetClass(flagSet, pos_1, pos_2) {
   }
   posMass[0] = [posRow, posCol];
 
+  hedSnake = massiv[posMass[1][0]][posMass[1][1]];
+  hedSnake.classList.add('kub_activ');
 
   hedSnake = massiv[posRow][posCol];
   hedSnake.classList.add('kub_activ');
