@@ -33,6 +33,9 @@ html {
 .heads {
   background-color: brown;
 }
+.food {
+  background-color: rgb(20, 136, 49);
+}
 .btnStart,
 .btnStop,
 .horizont,

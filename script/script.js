@@ -9,6 +9,12 @@ let posMass = [
   [10, 0],
 ];//! позиции змеи
 
+//? функция случайных чисел
+function randOm(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 const massiv = [];
 for (let i = 0; i < 20; i++) {
@@ -28,6 +34,8 @@ for (let i = 0; i < 20; i++) {
 console.log(massiv);
 
 let time,
+  foo,
+  forSnake = [],
   legthSnake = 3,
   flag = 1,
   posCol = 2,
@@ -38,6 +46,16 @@ hedSnake = massiv[posRow][posCol - 1];
 hedSnake.classList.add('kub_activ');
 hedSnake = massiv[posRow][posCol - 2];
 hedSnake.classList.add('kub_activ');
+
+function foods() {
+  let m = randOm(0, 19);
+  let n = randOm(0, 19);
+  foo = massiv[m][n];
+  foo.classList.add('food');
+  forSnake = [m, n];
+}
+
+foods();
 
 btn.addEventListener('click', () => { //? старт
   time = setInterval(frame, 250);
@@ -92,7 +110,12 @@ function resetClass(flagSet, pos_1, pos_2) {
     posMass[posMass.length - i] = moveData;
   }
   posMass[0] = [posRow, posCol];
+  if (forSnake[0] == posRow && forSnake[0] == posCol) {
+    foo.classList.remove('food');
+    posMass.push(0, 0);
+  }
 
+  console.log(posMass);
   hedSnake = massiv[posMass[1][0]][posMass[1][1]];
   hedSnake.classList.add('kub_activ');
 
