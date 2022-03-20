@@ -31,7 +31,6 @@ for (let i = 0; i < 20; i++) {
     massiv[i][j] = pole.appendChild(dive);
   }
 }
-console.log(massiv);
 
 let time,
   foo,
