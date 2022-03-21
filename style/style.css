@@ -12,6 +12,9 @@ html {
   margin: 0 auto;
 }
 
+.main {
+  display: flex;
+}
 .container {
   margin: 20px auto; 
   display: grid;

@@ -4,10 +4,10 @@ const pole = document.querySelector('.container'),
   btnSt = document.querySelector('.btnStop');
 
 let posMass = [
-  [10, 2],
   [10, 1],
   [10, 0],
-];//! позиции змеи
+  [10, 0],
+];//! позиции змеи начальные значения
 
 //? функция случайных чисел
 function randOm(min, max) {
@@ -16,6 +16,7 @@ function randOm(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+//? массив для div-ов
 const massiv = [];
 for (let i = 0; i < 20; i++) {
   massiv.push([0]);
@@ -24,6 +25,7 @@ for (let i = 0; i < 20; i++) {
   }
 }
 
+//! создаем и заносим в массив div-вы
 for (let i = 0; i < 20; i++) {
   for (let j = 0; j < 20; j++) {
     let dive = document.createElement('div');
@@ -35,16 +37,30 @@ for (let i = 0; i < 20; i++) {
 let time,
   foo,
   forSnake = [],
-  legthSnake = 3,
+  legthSnake = 3,//? длина змеи
   flag = 1,
+  gameScore = 0,
   posCol = 2,
   posRow = 10;
-hedSnake = massiv[posRow][posCol];
-hedSnake.classList.add('kub_activ');
-hedSnake = massiv[posRow][posCol - 1];
-hedSnake.classList.add('kub_activ');
-hedSnake = massiv[posRow][posCol - 2];
-hedSnake.classList.add('kub_activ');
+
+//! рождение и рост змеи
+function bodySnake() {
+  if (legthSnake > posMass.length) posMass.push([0, 0]);
+  let moveData = [];
+  for (let i = posMass.length - 1; i > 0; i--) {
+    moveData[i] = posMass[i - 1];
+    posMass[i] = moveData[i];
+  }
+  posMass[0] = [posRow, posCol];
+  let x, y;
+  for (let n = posMass.length - 1; n >= 0; n--) {
+    y = posMass[n][0];
+    x = posMass[n][1];
+    hedSnake = massiv[y][x];
+    hedSnake.classList.add('kub_activ');
+  }
+}
+bodySnake();
 
 function foods() {
   let m = randOm(0, 19);
@@ -57,7 +73,7 @@ function foods() {
 foods();
 
 btn.addEventListener('click', () => { //? старт
-  time = setInterval(frame, 250);
+  time = setInterval(frame, 350);
   frame();
 })
 
@@ -90,7 +106,7 @@ function frame() {
 
 //? смена класса у div-ов
 function resetClass(flagSet, pos_1, pos_2) {
-  let moveData;
+
   if (flagSet == 1) {
     posRow += pos_1;
     posCol += pos_2;
@@ -104,24 +120,13 @@ function resetClass(flagSet, pos_1, pos_2) {
   hedSnake = massiv[x][y];
   hedSnake.classList.remove('kub_activ');
 
-  for (let i = 1; i <= posMass.length - 1; i++) {
-    moveData = posMass[posMass.length - 1 - i];
-    posMass[posMass.length - i] = moveData;
-  }
-  posMass[0] = [posRow, posCol];
-  if (forSnake[0] == posRow && forSnake[0] == posCol) {
+  if (forSnake[0] == posRow && forSnake[1] == posCol) {
     foo.classList.remove('food');
-    posMass.push(0, 0);
+    legthSnake++;
+    gameScore++;
+    foods();
   }
-
-  console.log(posMass);
-  hedSnake = massiv[posMass[1][0]][posMass[1][1]];
-  hedSnake.classList.add('kub_activ');
-
-  hedSnake = massiv[posRow][posCol];
-  hedSnake.classList.add('kub_activ');
-
-
+  bodySnake();
 }
 
 //? сканирование клавиш, "стрелок"
