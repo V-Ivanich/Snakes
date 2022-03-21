@@ -14,9 +14,10 @@ html {
 
 .main {
   display: flex;
+  justify-content: center;
 }
 .container {
-  margin: 20px auto; 
+  margin: 30px; 
   display: grid;
   grid-template: repeat(20, 20px) / repeat(20,20px);
   grid-auto-flow: row;

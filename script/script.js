@@ -1,7 +1,9 @@
 
 const pole = document.querySelector('.container'),
   btn = document.querySelector('.btnStart'),
-  btnSt = document.querySelector('.btnStop');
+  btnSt = document.querySelector('.btnStop'),
+  lZmei = document.querySelector('.zmi'),
+  ochi = document.querySelector('.ochKi');
 
 let posMass = [
   [10, 1],
@@ -123,7 +125,9 @@ function resetClass(flagSet, pos_1, pos_2) {
   if (forSnake[0] == posRow && forSnake[1] == posCol) {
     foo.classList.remove('food');
     legthSnake++;
-    gameScore++;
+    gameScore += 5;
+    lZmei.innerHTML = legthSnake;
+    ochi.innerHTML = gameScore;
     foods();
   }
   bodySnake();
