@@ -122,6 +122,7 @@ function resetClass(flagSet, pos_1, pos_2) {
   hedSnake = massiv[x][y];
   hedSnake.classList.remove('kub_activ');
 
+  //! проверка на захват еды
   if (forSnake[0] == posRow && forSnake[1] == posCol) {
     foo.classList.remove('food');
     legthSnake++;
@@ -131,6 +132,7 @@ function resetClass(flagSet, pos_1, pos_2) {
     foods();
   }
   bodySnake();
+
 }
 
 //? сканирование клавиш, "стрелок"

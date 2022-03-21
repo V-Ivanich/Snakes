@@ -16,6 +16,13 @@ html {
   display: flex;
   justify-content: center;
 }
+.left,.right {
+  padding-top: 40px;
+}
+label {
+  font-size: 20px;
+  color: brown;
+}
 .container {
   margin: 30px; 
   display: grid;
