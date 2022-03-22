@@ -67,9 +67,14 @@ bodySnake();
 function foods() {
   let m = randOm(0, 19);
   let n = randOm(0, 19);
-  foo = massiv[m][n];
-  foo.classList.add('food');
-  forSnake = [m, n];
+
+  if (scanBody(m, n)) {
+    foods();
+  } else {
+    foo = massiv[m][n];
+    foo.classList.add('food');
+    forSnake = [m, n];
+  }
 }
 
 foods();
@@ -122,6 +127,12 @@ function resetClass(flagSet, pos_1, pos_2) {
   hedSnake = massiv[x][y];
   hedSnake.classList.remove('kub_activ');
 
+  if (scanBody(posRow, posCol)) {
+    clearInterval(time);
+    pole.innerHTML += 'Конец Игре!!!';
+    return;
+  }
+
   //! проверка на захват еды
   if (forSnake[0] == posRow && forSnake[1] == posCol) {
     foo.classList.remove('food');
@@ -144,4 +155,21 @@ document.onkeydown = function (event) {
   if (event.key == 'ArrowUp') flag = 4;
 
   if (event.key == 'ArrowDown') flag = 2;
+}
+
+//? проверка на положение тела змеи
+function scanBody(y, x) {
+  let result = false,
+    z;
+  for (let i = 0; i < posMass.length; i++) {
+    z = posMass[i][0];
+    if (y == z) {
+      z = posMass[i][1];
+      if (x == z) {
+        result = true;
+        break;
+      } else continue;
+    } else continue;
+  }
+  return result;
 }
