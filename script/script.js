@@ -3,6 +3,7 @@ const pole = document.querySelector('.container'),
   btn = document.querySelector('.btnStart'),
   btnSt = document.querySelector('.btnStop'),
   lZmei = document.querySelector('.zmi'),
+  gameOver = document.querySelector('.over'),
   ochi = document.querySelector('.ochKi');
 
 let posMass = [
@@ -80,7 +81,7 @@ function foods() {
 foods();
 
 btn.addEventListener('click', () => { //? старт
-  time = setInterval(frame, 350);
+  time = setInterval(frame, 330);
   frame();
 })
 
@@ -129,7 +130,7 @@ function resetClass(flagSet, pos_1, pos_2) {
 
   if (scanBody(posRow, posCol)) {
     clearInterval(time);
-    pole.innerHTML += 'Конец Игре!!!';
+    gameOver.classList.add('over_active');
     return;
   }
 
@@ -148,13 +149,28 @@ function resetClass(flagSet, pos_1, pos_2) {
 
 //? сканирование клавиш, "стрелок"
 document.onkeydown = function (event) {
-  if (event.key == 'ArrowLeft') flag = 3;
+  if (event.key == 'ArrowLeft') {
+    if (flag != 1) {
+      flag = 3;
+    } else return;
+  }
+  if (event.key == 'ArrowRight') {
+    if (flag != 3) {
+      flag = 1;
+    } else return;
+  }
 
-  if (event.key == 'ArrowRight') flag = 1;
+  if (event.key == 'ArrowUp') {
+    if (flag != 2) {
+      flag = 4;
+    } else return;
+  }
 
-  if (event.key == 'ArrowUp') flag = 4;
-
-  if (event.key == 'ArrowDown') flag = 2;
+  if (event.key == 'ArrowDown') {
+    if (flag != 4) {
+      flag = 2;
+    } else return;
+  }
 }
 
 //? проверка на положение тела змеи

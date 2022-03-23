@@ -12,6 +12,10 @@ html {
   margin: 0 auto;
 }
 
+h1{
+  color: chocolate;
+  text-align: center;
+}
 .main {
   display: flex;
   justify-content: center;
@@ -24,6 +28,7 @@ label {
   color: brown;
 }
 .container {
+  position: relative;
   margin: 30px; 
   display: grid;
   grid-template: repeat(20, 20px) / repeat(20,20px);
@@ -75,4 +80,28 @@ label {
 td, tr {
   height: 20px;
   width: 20px;
+}
+.over {
+  position: absolute;
+  background-color: cornflowerblue;
+  border: 2px solid black;
+  border-radius:  5px;
+  padding: 10px;
+  width: 100%;
+  top: 40%;
+  left: 0;
+  opacity: 0;
+}
+.over_active {
+  animation-duration: 00.5s;
+  animation-name: vizi;
+  @keyframes vizi {
+    0% {
+      opacity: 0;
+      transition: all 1s ease;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
