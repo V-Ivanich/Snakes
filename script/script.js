@@ -2,15 +2,12 @@
 const pole = document.querySelector('.container'),
   btn = document.querySelector('.btnStart'),
   btnSt = document.querySelector('.btnStop'),
+  btnCont = document.querySelector('.btnCont'),
   lZmei = document.querySelector('.zmi'),
   gameOver = document.querySelector('.over'),
   ochi = document.querySelector('.ochKi');
 
-let posMass = [
-  [10, 1],
-  [10, 0],
-  [10, 0],
-];//! позиции змеи начальные значения
+//! позиции змеи начальные значения
 
 //? функция случайных чисел
 function randOm(min, max) {
@@ -28,7 +25,7 @@ for (let i = 0; i < 20; i++) {
   }
 }
 
-//! создаем и заносим в массив div-вы
+
 for (let i = 0; i < 20; i++) {
   for (let j = 0; j < 20; j++) {
     let dive = document.createElement('div');
@@ -37,14 +34,37 @@ for (let i = 0; i < 20; i++) {
   }
 }
 
-let time,
-  foo,
-  forSnake = [],
-  legthSnake = 3,//? длина змеи
-  flag = 1,
-  gameScore = 0,
-  posCol = 2,
+function startRestart() {
+  forSnake = [];
+  legthSnake = 3;
+  flag = 1;
+  gameScore = 0;
+  posCol = 2;
   posRow = 10;
+  posMass = [
+    [10, 1],
+    [10, 0],
+    [10, 0],
+  ]
+}
+
+let time,
+  posMass, //! создаем и заносим в массив div-вы
+  foo,
+  forSnake,
+  legthSnake,//? длина змеи
+  flag,
+  gameScore,
+  posCol,
+  posRow;
+
+function divClear() {
+  let div_i = document.querySelectorAll('.kub');
+  for (let item of div_i) {
+    item.classList.remove('kub_activ');
+    item.classList.remove('food');
+  }
+}
 
 //! рождение и рост змеи
 function bodySnake() {
@@ -63,7 +83,7 @@ function bodySnake() {
     hedSnake.classList.add('kub_activ');
   }
 }
-bodySnake();
+
 
 function foods() {
   let m = randOm(0, 19);
@@ -78,9 +98,20 @@ function foods() {
   }
 }
 
-foods();
-
 btn.addEventListener('click', () => { //? старт
+  gameOver.classList.remove('over_active');
+  divClear();
+  startRestart();
+  bodySnake();
+  foods();
+  lZmei.innerHTML = legthSnake;
+  ochi.innerHTML = gameScore;
+  time = setInterval(frame, 330);
+  frame();
+})
+
+
+btnCont.addEventListener('click', () => { //? продолжить
   time = setInterval(frame, 330);
   frame();
 })

@@ -39,7 +39,7 @@ label {
 .kub {
   width: 20px;
   height: 20px;
-  background-color: burlywood;
+  background-color: rgb(131, 182, 116);
   transition: all .1s ease;
 }
 .kub_activ {
@@ -54,6 +54,7 @@ label {
 }
 .btnStart,
 .btnStop,
+.btnCont,
 .horizont,
 .vertikal {
   display: block;
@@ -65,8 +66,10 @@ label {
   background-color: darkkhaki;
   border: 1px solid black;
   border-radius:  3px;
+  font-size: 18px;
 }
 .btnStart:hover,
+.btnCont:hover,
 .btnStop:hover {
   background-color: rgb(224, 228, 166);
 }
@@ -83,7 +86,7 @@ td, tr {
 }
 .over {
   position: absolute;
-  background-color: cornflowerblue;
+  background-color: rgb(135, 190, 207);
   border: 2px solid black;
   border-radius:  5px;
   padding: 10px;
@@ -93,15 +96,25 @@ td, tr {
   opacity: 0;
 }
 .over_active {
-  animation-duration: 00.5s;
+  animation-duration: 1.5s;
   animation-name: vizi;
+  opacity: 1;
+}
   @keyframes vizi {
     0% {
       opacity: 0;
-      transition: all 1s ease;
+    }
+    25% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.7;
     }
     100% {
       opacity: 1;
     }
   }
-}
+
