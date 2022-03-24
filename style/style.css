@@ -11,10 +11,33 @@ html {
   background-color: rgba(136, 169, 196, 0.815);
   margin: 0 auto;
 }
-
+body {
+  font-family: 'Anton', sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(116, 101, 156, 0.548);
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+}
+.logo,
+.title,
+.points_snake,
+.points_result {
+  align-self: center;
+}
+.title {
+  margin-left: -50px;
+}
 h1{
   color: chocolate;
   text-align: center;
+}
+h2 {
+  font-family: 'Fredoka One', cursive;
+  color: rgba(48, 41, 107, 0.644);
 }
 .main {
   display: flex;
@@ -23,9 +46,43 @@ h1{
 .left,.right {
   padding-top: 40px;
 }
+.logo{
+  display: flex;
+  justify-content: space-between;
+}
+span {
+  background-color: rgba(222, 167, 135, 0.884);
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.hed {
+  height: 30px;
+  width: 30px;
+  margin-top: -6px;
+}
+.bod_2 {
+  height: 26px;
+  width: 26px;
+  margin-top: -2px;
+}
+.bod_3 {
+  height: 24px;
+  width: 24px;
+  margin-top: 5px;
+}
+.tail_2 {
+  height: 22px;
+  width: 22px;
+  margin-top: 2px;
+}
+.tail {
+  height: 18px;
+  width: 18px;
+  margin-top: -8px;
+}
 label {
   font-size: 20px;
-  color: brown;
+  color: rgba(48, 41, 107, 0.644);
 }
 .container {
   position: relative;
@@ -39,11 +96,11 @@ label {
 .kub {
   width: 20px;
   height: 20px;
-  background-color: rgb(131, 182, 116);
+  background-color: rgba(164, 182, 116, 0.918);
   transition: all .1s ease;
 }
 .kub_activ {
-  background-color: darkcyan;
+  background-color: rgba(48, 41, 107, 0.644);
   transition: all .2s ease;
 }
 .heads {
@@ -54,18 +111,17 @@ label {
 }
 .btnStart,
 .btnStop,
-.btnCont,
-.horizont,
-.vertikal {
+.btnCont {
   display: block;
   margin-top: 6px;
   margin-left: auto;
   margin-right: auto;
-  width: 80px;
-  height: 22px;
+  width: 100px;
+  height: 28px;
   background-color: darkkhaki;
   border: 1px solid black;
   border-radius:  3px;
+  font-family: 'Anton', sans-serif;
   font-size: 18px;
 }
 .btnStart:hover,
