@@ -5,9 +5,11 @@ const pole = document.querySelector('.container'),
   btnCont = document.querySelector('.btnCont'),
   lZmei = document.querySelector('.zmi'),
   gameOver = document.querySelector('.over'),
+  records = document.querySelector('.tabRec'),
+  inPut = document.querySelector('#enter'),
   ochi = document.querySelector('.ochKi');
 
-//! позиции змеи начальные значения
+records.rows[0].style.background = 'rgba(190, 180, 147, 0.66)';
 
 //? функция случайных чисел
 function randOm(min, max) {
@@ -24,7 +26,6 @@ for (let i = 0; i < 20; i++) {
     massiv[i][p] = 0;
   }
 }
-
 
 for (let i = 0; i < 20; i++) {
   for (let j = 0; j < 20; j++) {
@@ -162,6 +163,7 @@ function resetClass(flagSet, pos_1, pos_2) {
   if (scanBody(posRow, posCol)) {
     clearInterval(time);
     gameOver.classList.add('over_active');
+    results();
     return;
   }
 
@@ -219,4 +221,10 @@ function scanBody(y, x) {
     } else continue;
   }
   return result;
+}
+
+function results() {
+  records.rows[1].cells[0].innerHTML = inPut.value;
+  records.rows[1].cells[1].innerHTML = legthSnake;
+  records.rows[1].cells[2].innerHTML = gameScore;
 }
