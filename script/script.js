@@ -11,6 +11,17 @@ const pole = document.querySelector('.container'),
 
 records.rows[0].style.background = 'rgba(190, 180, 147, 0.66)';
 
+let time,
+  posMass,
+  foo,
+  forSnake,
+  legthSnake,//? длина змеи
+  flag,
+  gameScore,
+  posCol,
+  posRow;
+const scoreGame = [];
+
 //? функция случайных чисел
 function randOm(min, max) {
   min = Math.ceil(min);
@@ -49,15 +60,6 @@ function startRestart() {
   ]
 }
 
-let time,
-  posMass, //! создаем и заносим в массив div-вы
-  foo,
-  forSnake,
-  legthSnake,//? длина змеи
-  flag,
-  gameScore,
-  posCol,
-  posRow;
 
 function divClear() {
   let div_i = document.querySelectorAll('.kub');
@@ -222,9 +224,29 @@ function scanBody(y, x) {
   }
   return result;
 }
-
+//? вывод результата и его сравнение
 function results() {
-  records.rows[1].cells[0].innerHTML = inPut.value;
-  records.rows[1].cells[1].innerHTML = legthSnake;
-  records.rows[1].cells[2].innerHTML = gameScore;
+  scoreGame.push([inPut.value, legthSnake, gameScore]);
+  const temp = []; //* промежуточный массив
+  let maxPoint = 0; //* максимальное значение
+  while (scoreGame.length != 0) {
+    for (let i = 0; i < scoreGame.length - 1; i++) {
+      if (scoreGame[maxPoint][2] < scoreGame[i + 1][2])
+        maxPoint = i + 1;
+    }
+    temp.push(scoreGame[maxPoint]);
+    scoreGame.splice(maxPoint, 1);
+    maxPoint = 0;
+  }
+  scoreGame = temp.map();
+  for (let i = 0; i < scoreGame.length; i++) {
+    records.rows[i + 1].cells[0].innerHTML = scoreGame[i][i];
+    records.rows[i + 1].cells[1].innerHTML = scoreGame[i][i + 1];
+    records.rows[i + 1].cells[2].innerHTML = scoreGame[i][i + 2];
+  }
+
+  // records.rows[1].cells[0].innerHTML = inPut.value;
+  // records.rows[1].cells[1].innerHTML = legthSnake;
+  // records.rows[1].cells[2].innerHTML = gameScore;
+  console.log(scoreGame);
 }
