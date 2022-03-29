@@ -6,6 +6,20 @@
   border: 0;
   box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+#ru, #us,#radioLab {
+  cursor: pointer;
+}
+/* .us-us {
+  display: contents;
+}
+.ru-ru {
+  display: none;
+  font-family: 'Balsamiq Sans', cursive;
+} */
 html {
   max-width: 1200px;
   background-color: rgba(136, 169, 196, 0.815);
@@ -13,6 +27,25 @@ html {
 }
 body {
   font-family: 'Anton', sans-serif;
+}
+.info {
+  position: relative;
+}
+.wind_info {
+  position: absolute;
+  top: -250px;
+  left: -440%;
+  width: 250px;
+  height: 210px;
+  border-radius: 6px;
+  padding: 15px 10px 0 15px;
+  color: bisque;
+  transition: .7s ease;
+  background-color: rgba(116, 147, 231, 0.781);
+}
+.wind_info_active {
+  top: 55px;
+  transition:  .7s ease;
 }
 tr,td,th {
   border: 1px solid black;
@@ -33,23 +66,25 @@ tr,td,th {
 .logo,
 .title,
 .points_snake,
-.points_result {
+.points_result,
+.language,
+.info {
   align-self: center;
 }
 .title {
   margin-left: -50px;
 }
+h1,h2,h3,.rec{
+  text-align: center;
+}
 h1{
   color: chocolate;
-  text-align: center;
 }
 h2 {
   font-family: 'Fredoka One', cursive;
   color: rgba(48, 41, 107, 0.644);
 }
-.rec {
-  text-align: center;
-}
+
 .main {
   display: flex;
   justify-content: center;

@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
   <title>Змейка</title>
 </head>
 
@@ -21,15 +22,36 @@
     </div>
 
     <div class="title">
-      <h2>*SNAKE*</h2>
+      <h2 class="titleH2">*SNAKE*</h2>
     </div>
     <div class="points_snake">
-      <label>Sneke length : </label>
+      <label class="lenSnake">Snake length : </label>
       <label class="zmi">3</label>
     </div>
     <div class="points_result">
-      <label>Result : </label>
+      <label class="resUlt">Result : </label>
       <label class="ochKi">0</label>
+    </div>
+    <div class="language">
+      <div class="block_ru">
+        <input type="radio" name="lang" id="ru">
+        <label id="radioLab" for="ru">RU</label>
+      </div>
+      <div class="block_us">
+        <input type="radio" name="lang" id="us" checked>
+        <label id="radioLab" for="us">US</label>
+      </div>
+    </div>
+    <div class="info">
+      <a href="#" id="information">Info...</a>
+      <div id="win">
+        <p>
+        <h3>Игра Змейка.</h3>
+        Это реинкарнация старой игры с телефонов Nokia.
+        Так что можно понастальгировать, кто хочет.
+        Ну а для меня, очередной пэт проект ;)
+        </p>
+      </div>
     </div>
   </div>
 
@@ -46,7 +68,7 @@
 
     <div class="container">
       <div class="over">
-        <h1>GAME OVER</h1>
+        <h1 class="gamOv">GAME OVER</h1>
       </div>
     </div>
 
@@ -103,6 +125,7 @@
 
 
   <script src="./script/script.js"></script>
+  <script src="./script/object.js"></script>
 </body>
 
 </html>

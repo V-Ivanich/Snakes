@@ -7,6 +7,10 @@ const pole = document.querySelector('.container'),
   gameOver = document.querySelector('.over'),
   records = document.querySelector('.tabRec'),
   inPut = document.querySelector('#enter'),
+  info = document.querySelector('#information'),
+  windOws = document.querySelector('#win'),
+  rus = document.querySelector('#ru'),
+  usa = document.querySelector('#us'),
   ochi = document.querySelector('.ochKi');
 
 records.rows[0].style.background = 'rgba(190, 180, 147, 0.66)';
@@ -19,6 +23,7 @@ let time,
   flag,
   gameScore,
   posCol,
+  ru_us,
   posRow;
 let scoreGame = [];
 
@@ -28,6 +33,29 @@ function randOm(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+rus.addEventListener('click', () => {
+  ru_us = 'ru';
+  switchLanguage();
+});
+usa.addEventListener('click', () => {
+  ru_us = 'us';
+  switchLanguage();
+});
+
+function switchLanguage() {
+  document.querySelector('.titleH2').innerHTML = lang['title'][ru_us];
+  document.querySelector('.lenSnake').innerHTML = lang['length'][ru_us];
+  document.querySelector('.resUlt').innerHTML = lang['result'][ru_us];
+  document.querySelector('#information').innerHTML = lang['info'][ru_us];
+  document.querySelector('.btnStart').innerHTML = lang['btStart'][ru_us];
+  document.querySelector('.btnCont').innerHTML = lang['continue'][ru_us];
+  document.querySelector('.btnStop').innerHTML = lang['stop'][ru_us];
+  document.querySelector('.gamOv').innerHTML = lang['over'][ru_us];
+  document.querySelector('.rec').innerHTML = lang['records'][ru_us];
+}
+
+windOws.classList.add('wind_info');
 
 //? массив для div-ов
 const massiv = [];
@@ -69,6 +97,10 @@ function divClear() {
   }
 }
 
+info.addEventListener('click', () => {
+  windOws.classList.toggle('wind_info_active');
+});
+
 //! рождение и рост змеи
 function bodySnake() {
   if (legthSnake > posMass.length) posMass.push([0, 0]);
@@ -109,6 +141,7 @@ btn.addEventListener('click', () => { //? старт
   foods();
   lZmei.innerHTML = legthSnake;
   ochi.innerHTML = gameScore;
+  clearInterval(time);
   time = setInterval(frame, 330);
   frame();
 })
@@ -240,7 +273,7 @@ function results() {
     maxPoint = 0;
   }
   scoreGame = [];
-  scoreGame = temp.slice();
+  scoreGame = temp.slice(0, 7);
 
   for (let i = 0; i < scoreGame.length; i++) {
     records.rows[i + 1].cells[0].innerHTML = scoreGame[i][0];
