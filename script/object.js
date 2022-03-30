@@ -48,4 +48,16 @@ const lang = {
     'ru': 'Очков',
     'us': 'Score',
   },
+  'titlInfo': {
+    'ru': 'Игра Змейка.',
+    'us': 'Game Snake.',
+  },
+  'textInfo': {
+    'ru': "Это реинкарнация старой игры с телефонов Nokia. Так что можно понастальгировать, кто хочет. Ну а для меня, очередной пэт проект ;) ",
+    'us': 'This is the reincarnation of an old game from Nokia phones. So, whoever wants to, can be nostalgic. Well, for me, another pet project ;) ',
+  },
+  'position': {
+    'ru': -144,
+    'us': -154,
+  }
 }

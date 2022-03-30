@@ -13,20 +13,14 @@ a{
 #ru, #us,#radioLab {
   cursor: pointer;
 }
-/* .us-us {
-  display: contents;
-}
-.ru-ru {
-  display: none;
-  font-family: 'Balsamiq Sans', cursive;
-} */
+
 html {
   max-width: 1200px;
   background-color: rgba(136, 169, 196, 0.815);
   margin: 0 auto;
 }
 body {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Balsamiq Sans', cursive;
 }
 .info {
   position: relative;
@@ -34,9 +28,9 @@ body {
 .wind_info {
   position: absolute;
   top: -250px;
-  left: -440%;
+  left: -154px;
   width: 250px;
-  height: 210px;
+  height: 180px;
   border-radius: 6px;
   padding: 15px 10px 0 15px;
   color: bisque;
@@ -81,7 +75,8 @@ h1{
   color: chocolate;
 }
 h2 {
-  font-family: 'Fredoka One', cursive;
+  font-stretch: expanded;
+  font-size: xx-large;
   color: rgba(48, 41, 107, 0.644);
 }
 
