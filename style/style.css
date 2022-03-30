@@ -10,6 +10,14 @@ a{
   text-decoration: none;
   cursor: pointer;
 }
+a:hover {
+  transition: .4s ease;
+  color: beige;
+}
+a:active {
+  transition: .4s ease;
+  color: cadetblue;
+}
 #ru, #us,#radioLab {
   cursor: pointer;
 }
@@ -21,6 +29,11 @@ html {
 }
 body {
   font-family: 'Balsamiq Sans', cursive;
+}
+main {
+  display: grid;
+  grid-template-rows: 80px 20px 60px 100px 240px 20px 80px ;
+  grid-template-columns: repeat(7, 1fr);
 }
 .info {
   position: relative;
@@ -50,12 +63,41 @@ tr,td,th {
 }
 
 .header {
-  display: flex;
-  justify-content: space-around;
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
   background-color: rgba(116, 101, 156, 0.548);
-  width: 100%;
-  height: 80px;
   border-radius: 5px;
+  display: grid;
+  grid-template: 80px / repeat(7, 1fr);
+}
+.logo {
+  /* grid-row: 1 / 2; */
+  grid-column: 1 / 2;
+}
+.title,.titleH2 {
+  /* grid-row: 1 / 2; */
+  grid-column: 2 / 3;
+}
+.points_snake {
+  /* grid-row: 1 / 2; */
+  grid-column: 3 / 4;
+}
+.points_result {
+  /* grid-row: 1/2; */
+  grid-column: 4 / 5;
+}
+.main {
+  grid-row: 2 / 7;
+  grid-column: 1 / 8;
+}
+.container {
+  grid-row: 3 / 4;
+  grid-column: 3 / 6;
+}
+
+.logo{
+  display: flex;
+  justify-content: end;
 }
 .logo,
 .title,
@@ -65,9 +107,7 @@ tr,td,th {
 .info {
   align-self: center;
 }
-.title {
-  margin-left: -50px;
-}
+
 h1,h2,h3,.rec{
   text-align: center;
 }
@@ -87,10 +127,7 @@ h2 {
 .left,.right {
   padding-top: 40px;
 }
-.logo{
-  display: flex;
-  justify-content: space-between;
-}
+
 span {
   background-color: rgba(222, 167, 135, 0.884);
   border: 1px solid black;
@@ -121,7 +158,7 @@ span {
   width: 18px;
   margin-top: -8px;
 }
-label {
+label, a {
   font-size: 20px;
   color: rgba(48, 41, 107, 0.644);
 }
