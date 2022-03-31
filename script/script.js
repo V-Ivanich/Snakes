@@ -7,7 +7,7 @@ const pole = document.querySelector('.container'),
   gameOver = document.querySelector('.over'),
   records = document.querySelector('.tabRec'),
   inPut = document.querySelector('#enter'),
-  divInfo = document.querySelector('.info'),
+  heder = document.querySelector('.header'),
   info = document.querySelector('#information'),
   windOws = document.querySelector('#win'),
   rus = document.querySelector('#ru'),
@@ -35,6 +35,7 @@ function randOm(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+//? переключение языка
 rus.addEventListener('click', () => {
   ru_us = 'ru';
   switchLanguage();
@@ -59,7 +60,6 @@ function switchLanguage() {
   document.querySelector('.scTab').innerHTML = lang['tablScore'][ru_us];
   document.querySelector('.infoTit').innerHTML = lang['titlInfo'][ru_us];
   document.querySelector('.paragraf').innerHTML = lang['textInfo'][ru_us];
-  windOws.style.left = lang['position'][ru_us] + 'px';
 }
 
 windOws.classList.add('wind_info');
@@ -105,8 +105,11 @@ function divClear() {
   }
 }
 
+//? кнопка инфо
 info.addEventListener('click', () => {
   windOws.classList.toggle('wind_info_active');
+  let posX = heder.offsetWidth;
+  windOws.style.left = posX - 250 + 'px';
 });
 
 //! рождение и рост змеи
