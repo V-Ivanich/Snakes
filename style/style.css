@@ -42,6 +42,12 @@ main {
   grid-column: 1fr;
 }
 
+.mobBtn {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 100%;
+}
 
 .wind_info {
   position: absolute;
@@ -77,7 +83,7 @@ th {
   background-color: rgba(116, 101, 156, 0.548);
   border-radius: 5px;
   display: grid;
-  grid-template: 80px / repeat(2, 1fr) repeat(2, 0.8fr) repeat(3, .4fr);
+  grid-template: 70px / repeat(2, 1fr) repeat(2, 0.8fr) repeat(3, .4fr);
   position: relative;
 }
 
