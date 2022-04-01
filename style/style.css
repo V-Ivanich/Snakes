@@ -349,6 +349,45 @@ footer {
     font-size: small;
   }
 
+  .mobail_button {
+    display: grid;
+    grid-template-rows: repeat(2, 54px);
+    grid-template-columns: repeat(2, .4fr) 1fr repeat(2, .4fr);
+  }
+
+  /* ВЛЕВО */
+  #mBot1 {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  /* ВНИЗ */
+  #mBot2 {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+
+  /* ВПРАВО */
+  #mBot3 {
+    grid-row: 2/3;
+    grid-column: 4/5;
+  }
+
+  /* ВВЕРХ */
+  #mBot4 {
+    grid-row: 1/2;
+    grid-column: 5/6;
+  }
+
+  #mBot1,
+  #mBot2,
+  #mBot3,
+  #mBot4 {
+    align-self: center;
+    justify-self: center;
+    background-color: rgb(132, 172, 172);
+  }
+
   .header {
     width: 100%;
     height: 100%;
@@ -396,7 +435,7 @@ footer {
   .container {
     position: relative;
     border: 2px solid rgba(70, 125, 151, 0.692);
-    margin: 5px;
+    margin: 5px auto;
     display: grid;
     grid-template: repeat(20, 15px) / repeat(20, 15px);
     grid-auto-flow: row;
