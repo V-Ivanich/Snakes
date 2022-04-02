@@ -327,7 +327,12 @@ footer {
   grid-column: 1 / end;
 }
 
-.noVisivle {
+.absolut {
+  position: absolute;
+  top: -300%;
+}
+
+.noVisible {
   display: none;
 }
 

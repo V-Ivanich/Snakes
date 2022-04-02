@@ -12,7 +12,11 @@ const pole = document.querySelector('.container'),
   windOws = document.querySelector('#win'),
   rus = document.querySelector('#ru'),
   usa = document.querySelector('#us'),
-  ochi = document.querySelector('.ochKi');
+  ochi = document.querySelector('.ochKi'),
+  mobBtn = document.querySelector('#block_btn'),
+  leftBlock = document.querySelector('.left'),
+  rightBlock = document.querySelector('.right');
+
 
 records.rows[0].style.background = 'rgba(190, 180, 147, 0.66)';
 
@@ -25,7 +29,8 @@ let time,
   gameScore,
   posCol,
   ru_us,
-  posRow;
+  posRow,
+  widthWindow;//? по сути, ширина экрана
 let scoreGame = [];
 
 //? функция случайных чисел
@@ -44,6 +49,14 @@ usa.addEventListener('click', () => {
   ru_us = 'us';
   switchLanguage();
 });
+
+//! слушатель изменения экрана
+start();
+window.onresize = start;
+function start() {
+  widthWindow = document.documentElement.clientWidth;
+  resazeWindow();
+}
 
 function switchLanguage() {
   document.querySelector('.titleH2').innerHTML = lang['title'][ru_us];
@@ -293,4 +306,14 @@ function results() {
   }
 }
 
-
+function resazeWindow() {
+  if (widthWindow <= 425) {
+    mobBtn.classList.remove('noVisible');
+    leftBlock.classList.add('absolut');
+    rightBlock.classList.add('absolut');
+  } else {
+    mobBtn.classList.add('noVisible');
+    leftBlock.classList.remove('absolut');
+    rightBlock.classList.remove('absolut');
+  }
+}
