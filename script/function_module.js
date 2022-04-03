@@ -122,3 +122,27 @@ function resazeWindow() {
     rightBlock.classList.remove('absolut');
   }
 }
+
+//? смена класса у div-ов
+function resetClass(flagSet, pos_1, pos_2) {
+
+  if (flagSet == 1) {
+    posRow += pos_1;
+    posCol += pos_2;
+  }
+  else {
+    posRow -= pos_1;
+    posCol -= pos_2;
+  }
+  let x = posMass[posMass.length - 1][0];
+  let y = posMass[posMass.length - 1][1];
+  hedSnake = massiv[x][y];
+  hedSnake.classList.remove('kub_activ');
+
+  if (scanBody(posRow, posCol)) {
+    clearInterval(time);
+    gameOver.classList.add('over_active');
+    results();
+    return;
+  }
+}

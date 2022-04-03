@@ -59,9 +59,7 @@ function start() {
   resazeWindow();
 }
 
-
 windOws.classList.add('wind_info');
-
 
 //? массив для div-ов
 const massiv = [];
