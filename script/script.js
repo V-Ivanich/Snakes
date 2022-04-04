@@ -99,6 +99,10 @@ function startRestart() {
   ]
 }
 
+mobMenu.addEventListener('click', () => {
+  mobMenu.classList.toggle('_active');
+}
+)
 
 function divClear() {
   let div_i = document.querySelectorAll('.kub');
