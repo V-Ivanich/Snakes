@@ -3,7 +3,6 @@
 const pole = document.querySelector('.container'),
   btn = document.querySelector('.btnStart'),
   btnSt = document.querySelector('.btnStop'),
-  btnCont = document.querySelector('.btnCont'),
   lZmei = document.querySelector('.zmi'),
   gameOver = document.querySelector('.over'),
   records = document.querySelector('.tabRec'),
@@ -15,6 +14,12 @@ const pole = document.querySelector('.container'),
   usa = document.querySelector('#us'),
   ochi = document.querySelector('.ochKi'),
   mobBtn = document.querySelector('#block_btn'),
+  mobLeft = document.querySelector('#mBot1'),
+  mobRight = document.querySelector('#mBot3'),
+  mobUp = document.querySelector('#mBot4'),
+  mobDown = document.querySelector('#mBot2'),
+  mobMenu = document.querySelector('.mob_menu'),
+  mobRec = document.querySelector('.record_mob'),
   leftBlock = document.querySelector('.left'),
   rightBlock = document.querySelector('.right');
 
@@ -29,8 +34,10 @@ let time,
   flag,
   gameScore,
   posCol,
-  ru_us,
+  ru_us = 'us',
   posRow,
+  btnFlag = 0,
+  mobileRecord = '',
   widthWindow;//? по сути, ширина экрана
 let scoreGame = [];
 
@@ -123,13 +130,18 @@ btn.addEventListener('click', () => { //? старт
 })
 
 
-btnCont.addEventListener('click', () => { //? продолжить
-  time = setInterval(frame, 330);
-  frame();
-})
-
 btnSt.addEventListener('click', () => { //? стоп
-  clearInterval(time);
+  if (btnFlag == 0) {
+    clearInterval(time);
+    btnFlag = 1;
+    btnSt.innerHTML = lang['continue'][ru_us];
+  } else {
+    btnFlag = 0;
+    time = setInterval(frame, 330);
+    btnSt.innerHTML = lang['stop'][ru_us];
+    frame();
+  }
+
 })
 
 

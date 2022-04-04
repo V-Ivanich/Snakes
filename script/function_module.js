@@ -15,6 +15,10 @@ function results() {
   }
   scoreGame = [];
   scoreGame = temp.slice(0, 7);
+  mobileRecord = '';
+  mobileRecord = scoreGame[0][0] + '-';
+  mobileRecord += scoreGame[0][2];
+  document.querySelector('.mob_rec').innerHTML = mobileRecord;
 
   for (let i = 0; i < scoreGame.length; i++) {
     records.rows[i + 1].cells[0].innerHTML = scoreGame[i][0];
@@ -114,11 +118,13 @@ function scanBody(y, x) {
 function resazeWindow() {
   if (widthWindow <= 425) {
     mobBtn.classList.remove('noVisible');
-    leftBlock.classList.add('absolut');
+    mobMenu.classList.remove('noVisible');
+    mobRec.classList.remove('noVisible');
     rightBlock.classList.add('absolut');
   } else {
     mobBtn.classList.add('noVisible');
-    leftBlock.classList.remove('absolut');
+    mobMenu.classList.add('noVisible');
+    mobRec.classList.add('noVisible');
     rightBlock.classList.remove('absolut');
   }
 }
@@ -145,4 +151,28 @@ function resetClass(flagSet, pos_1, pos_2) {
     results();
     return;
   }
+}
+//? сканирование мобильных клавиш, "стрелок"
+mBot1.onclick = () => {
+  if (flag != 1) {
+    flag = 3;
+  } else return;
+}
+
+mBot3.onclick = () => {
+  if (flag != 3) {
+    flag = 1;
+  } else return;
+}
+
+mBot4.onclick = () => {
+  if (flag != 2) {
+    flag = 4;
+  } else return;
+}
+
+mBot2.onclick = () => {
+  if (flag != 4) {
+    flag = 2;
+  } else return;
 }

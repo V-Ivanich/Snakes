@@ -5,8 +5,8 @@ const lang = {
     'us': '*SNAKE*',
   },
   'length': {
-    'ru': 'Длина змейки :',
-    'us': 'Snake length :',
+    'ru': 'Длина :',
+    'us': 'Length :',
   },
   'result': {
     'ru': 'Очков :',
