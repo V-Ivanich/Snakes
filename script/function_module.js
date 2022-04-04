@@ -87,7 +87,6 @@ function switchLanguage() {
   document.querySelector('.resUlt').innerHTML = lang['result'][ru_us];
   document.querySelector('#information').innerHTML = lang['info'][ru_us];
   document.querySelector('.btnStart').innerHTML = lang['btStart'][ru_us];
-  document.querySelector('.btnCont').innerHTML = lang['continue'][ru_us];
   document.querySelector('.btnStop').innerHTML = lang['stop'][ru_us];
   document.querySelector('.gamOv').innerHTML = lang['over'][ru_us];
   document.querySelector('.rec').innerHTML = lang['records'][ru_us];

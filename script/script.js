@@ -21,6 +21,7 @@ const pole = document.querySelector('.container'),
   mobMenu = document.querySelector('.mob_menu'),
   mobRec = document.querySelector('.record_mob'),
   leftBlock = document.querySelector('.left'),
+  subMenu = document.querySelector('.sub_mobMenu'),
   rightBlock = document.querySelector('.right');
 
 
@@ -101,6 +102,7 @@ function startRestart() {
 
 mobMenu.addEventListener('click', () => {
   mobMenu.classList.toggle('_active');
+  subMenu.classList.toggle('sub_active');
 }
 )
 
