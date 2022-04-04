@@ -496,4 +496,17 @@ footer {
     width: 308px;
     height: 308px;
   }
+
+  .mob_menu {
+    z-index: 3;
+    display: block;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .mob_menu::before,
+  ::after {
+    box-sizing: border-box;
+  }
 }
