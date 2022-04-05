@@ -15,18 +15,21 @@ function results() {
   }
   scoreGame = [];
   scoreGame = temp.slice(0, 7);
+  localStorage.setItem('result', JSON.stringify(scoreGame));//!запись в "браузер"
   mobileRecord = '';
   mobileRecord = scoreGame[0][0] + '-';
   mobileRecord += scoreGame[0][2];
   document.querySelector('.mob_rec').innerHTML = mobileRecord;
+  moving();
+}
 
+function moving() {
   for (let i = 0; i < scoreGame.length; i++) {
     records.rows[i + 1].cells[0].innerHTML = scoreGame[i][0];
     records.rows[i + 1].cells[1].innerHTML = scoreGame[i][1];
     records.rows[i + 1].cells[2].innerHTML = scoreGame[i][2];
   }
 }
-
 //! рождение и рост змеи
 function bodySnake() {
   if (legthSnake > posMass.length) posMass.push([0, 0]);

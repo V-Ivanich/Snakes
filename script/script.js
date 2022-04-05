@@ -47,6 +47,10 @@ let time,
   widthWindow;//? по сути, ширина экрана
 let scoreGame = [];
 
+scoreGame = localStorage.getItem('result');
+scoreGame = JSON.parse(scoreGame);
+moving();
+
 //? функция случайных чисел
 function randOm(min, max) {
   min = Math.ceil(min);
