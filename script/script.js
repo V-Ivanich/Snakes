@@ -48,9 +48,10 @@ let time,
 let scoreGame = [];
 
 scoreGame = localStorage.getItem('result');
-scoreGame = JSON.parse(scoreGame);
-moving();
-
+if (scoreGame) {
+  scoreGame = JSON.parse(scoreGame);
+  moving();
+} else scoreGame = [];
 //? функция случайных чисел
 function randOm(min, max) {
   min = Math.ceil(min);
