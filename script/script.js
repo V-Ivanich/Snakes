@@ -22,6 +22,9 @@ const pole = document.querySelector('.container'),
   mobRec = document.querySelector('.record_mob'),
   leftBlock = document.querySelector('.left'),
   subMenu = document.querySelector('.sub_mobMenu'),
+  mInfo = document.querySelector('#m_info'),
+  mRec = document.querySelector('#m_rec'),
+  hidBody = document.querySelector('.telo'),
   rightBlock = document.querySelector('.right');
 
 
@@ -68,6 +71,10 @@ function start() {
 }
 
 windOws.classList.add('wind_info');
+//* клик по инфо окну для скытия
+windOws.onclick = () => {
+  windOws.classList.toggle('wind_info_active');
+}
 
 //? массив для div-ов
 const massiv = [];
@@ -99,7 +106,7 @@ function startRestart() {
     [10, 0],
   ]
 }
-
+//* гамбургер и субменю
 mobMenu.addEventListener('click', () => {
   mobMenu.classList.toggle('_active');
   subMenu.classList.toggle('sub_active');
@@ -116,14 +123,19 @@ function divClear() {
 
 //? кнопка инфо
 info.addEventListener('click', () => {
-  windOws.classList.toggle('wind_info_active');
-  let posX = heder.offsetWidth;
-  windOws.style.left = posX - 250 + 'px';
+  infoWindow();
 });
-
+mInfo.addEventListener('click', () => {
+  infoWindow();
+})
+//? кнопка таблица мибильная
+mRec.addEventListener('click', () => {
+  document.querySelector('.right').classList.toggle('right_active');
+})
 
 btn.addEventListener('click', () => { //? старт
   gameOver.classList.remove('over_active');
+  hidBody.classList.add('hiden');
   divClear();
   startRestart();
   bodySnake();
@@ -141,11 +153,13 @@ btnSt.addEventListener('click', () => { //? стоп
     clearInterval(time);
     btnFlag = 1;
     btnSt.innerHTML = lang['continue'][ru_us];
+    hidBody.classList.remove('hiden');
   } else {
     btnFlag = 0;
     time = setInterval(frame, 330);
     btnSt.innerHTML = lang['stop'][ru_us];
     frame();
+    hidBody.classList.add('hiden');
   }
 
 })

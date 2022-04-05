@@ -29,7 +29,7 @@ const lang = {
     'us': 'Stop',
   },
   'over': {
-    'ru': 'ОКОНЧЕННО',
+    'ru': 'ОКОНЧЕНО',
     'us': 'GAME OVER',
   },
   'records': {

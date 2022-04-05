@@ -175,3 +175,9 @@ mBot2.onclick = () => {
     flag = 2;
   } else return;
 }
+
+function infoWindow() {
+  windOws.classList.toggle('wind_info_active');
+  let posX = heder.offsetWidth;
+  windOws.style.left = posX - 250 + 'px';
+}
