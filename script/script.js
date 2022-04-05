@@ -12,6 +12,8 @@ const pole = document.querySelector('.container'),
   windOws = document.querySelector('#win'),
   rus = document.querySelector('#ru'),
   usa = document.querySelector('#us'),
+  m_rus = document.querySelector('#m_ru'),
+  m_usa = document.querySelector('#m_us'),
   ochi = document.querySelector('.ochKi'),
   mobBtn = document.querySelector('#block_btn'),
   mobLeft = document.querySelector('#mBot1'),
@@ -56,10 +58,22 @@ function randOm(min, max) {
 rus.addEventListener('click', () => {
   ru_us = 'ru';
   switchLanguage();
+  m_rus.checked = 'true';
+});
+m_rus.addEventListener('click', () => {
+  ru_us = 'ru';
+  switchLanguage();
+  rus.checked = 'true';
 });
 usa.addEventListener('click', () => {
   ru_us = 'us';
   switchLanguage();
+  m_usa.checked = 'true';
+});
+m_usa.addEventListener('click', () => {
+  ru_us = 'us';
+  switchLanguage();
+  usa.checked = 'true';
 });
 
 //! слушатель изменения экрана
@@ -107,11 +121,13 @@ function startRestart() {
   ]
 }
 //* гамбургер и субменю
-mobMenu.addEventListener('click', () => {
+mobMenu.addEventListener('click', mobileMenu);
+
+//! меню бургер
+function mobileMenu() {
   mobMenu.classList.toggle('_active');
   subMenu.classList.toggle('sub_active');
 }
-)
 
 function divClear() {
   let div_i = document.querySelectorAll('.kub');
@@ -122,17 +138,20 @@ function divClear() {
 }
 
 //? кнопка инфо
-info.addEventListener('click', () => {
-  infoWindow();
-});
+info.addEventListener('click', infoWindow);
+
 mInfo.addEventListener('click', () => {
   infoWindow();
+  mobileMenu();
 })
 //? кнопка таблица мибильная
 mRec.addEventListener('click', () => {
   document.querySelector('.right').classList.toggle('right_active');
+  mobileMenu();
 })
-
+document.querySelector('.right').onclick = () => {
+  document.querySelector('.right').classList.toggle('right_active');
+}
 btn.addEventListener('click', () => { //? старт
   gameOver.classList.remove('over_active');
   hidBody.classList.add('hiden');
