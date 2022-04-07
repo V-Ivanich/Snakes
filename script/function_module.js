@@ -22,7 +22,7 @@ function results() {
   document.querySelector('.mob_rec').innerHTML = mobileRecord;
   moving();
 }
-
+//? заполнение таблицы рекордов
 function moving() {
   for (let i = 0; i < scoreGame.length; i++) {
     records.rows[i + 1].cells[0].innerHTML = scoreGame[i][0];

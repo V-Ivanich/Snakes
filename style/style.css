@@ -594,3 +594,64 @@ footer {
     transition: all .4s ease;
   }
 }
+
+/*! стили кнопок, пробные */
+/* .button {
+  display: inline-block;
+  zoom: 1;
+  /* масштабирование и *display = ie7 хак для отображения display:inline-block */
+/* *display: inline;
+  vertical-align: baseline;
+  margin: 0 2px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% 'Roboto', sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+} */
+
+/* .button:hover {
+  text-decoration: none;
+}
+
+.button:active { */
+/* смещение на 1px вниз */
+/* position: relative;
+  top: 1px;
+} */
+/* 
+.orange {
+  color: #fef4e9;
+  border: solid 1px #da7c0c;
+  background: #f78d1d; */
+/*цвет фона кнопки для браузеров без поддержки CSS3*/
+/* background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20)); */
+/* для Webkit браузеров */
+/* background: -moz-linear-gradient(top, #faa51a, #f47a20); */
+/* для Firefox */
+/* background-image: -o-linear-gradient(top, #faa51a, #f47a20); */
+/* для Opera 11 */
+
+/* } */
+
+/* .orange:hover {
+  background: #f47c20;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+  background: -moz-linear-gradient(top, #f88e11, #f06015);
+  background-image: -o-linear-gradient(top, #f88e11, #f06015);
+} */
+/* 
+.orange:active {
+  color: #fcd3a5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+  background: -moz-linear-gradient(top, #f47a20, #faa51a);
+  background-image: -o-linear-gradient(top, #f47a20, #faa51a);
+} */
