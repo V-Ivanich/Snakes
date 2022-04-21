@@ -396,7 +396,8 @@ footer {
     font-size: large;
   }
 
-  label {
+  label,
+  .mobBtn {
     font-size: small;
   }
 
