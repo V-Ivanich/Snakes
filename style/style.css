@@ -36,6 +36,10 @@ body {
   font-family: 'Balsamiq Sans', cursive;
 }
 
+.noneDis {
+  display: none;
+}
+
 .hiden {
   overflow: hidden;
 }
@@ -44,7 +48,7 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-rows: 80px 1fr 75px 30px 210px;
+  grid-template-rows: 80px 1fr 65px 210px;
   grid-template-columns: .8fr 1fr .8fr;
 }
 
@@ -235,6 +239,14 @@ a {
   height: 408px;
 }
 
+.wind_info {
+  position: absolute;
+  top: -50px;
+  left: 450px;
+  width: 250px;
+  height: 200px;
+
+}
 
 .kub {
   width: 20px;
@@ -410,12 +422,11 @@ a {
   }
 
   .mobail_button {
-    grid-row: 5/6;
-    grid-column: 1/end;
+    grid-row: 4/5;
+    grid-column: 1/4;
     display: grid;
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(4, auto);
-    padding: 0 30px;
   }
 
   .mobBtn {
@@ -441,13 +452,13 @@ a {
   .left {
     grid-row: 3/4;
     grid-column: 1/4;
-    justify-self: center;
+    padding: 0;
   }
 
   .for_btn {
     display: grid;
-    grid-template-rows: 108px;
-    grid-template-columns: repeat(3, .5fr);
+    grid-template-rows: 65px;
+    grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-items: center;
   }
