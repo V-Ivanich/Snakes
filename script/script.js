@@ -97,6 +97,7 @@ windOws.classList.add('wind_info');
 //* клик по инфо окну для скытия
 windOws.onclick = () => {
   windOws.classList.toggle('wind_info_active');
+  shadow.classList.toggle('shadow_on');
 }
 
 //? массив для div-ов
@@ -150,6 +151,7 @@ function divClear() {
 info.addEventListener('click', infoWindow);
 
 mInfo.addEventListener('click', () => {
+  shadow.classList.toggle('shadow_on');
   infoWindow();
   mobileMenu();
 })
@@ -159,9 +161,12 @@ mRec.addEventListener('click', () => {
   shadow.classList.toggle('shadow_on');
   mobileMenu();
 })
+
 document.querySelector('.right').onclick = () => {
   document.querySelector('.right').classList.toggle('right_active');
+  shadow.classList.toggle('shadow_on');
 }
+
 btn.addEventListener('click', () => { //? старт
   gameOver.classList.remove('over_active');
   hidBody.classList.add('hiden');

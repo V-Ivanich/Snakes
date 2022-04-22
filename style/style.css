@@ -38,7 +38,7 @@ body {
 .shadow {
   position: absolute;
   z-index: 1;
-  background-color: rgba(224, 188, 188, 0.603);
+  background-color: rgba(143, 188, 215, 0.584);
   visibility: hidden;
   min-height: 200px;
   top: 0;
@@ -656,7 +656,7 @@ a {
 
   .right_active {
     top: 60px;
-    left: 50%;
+    left: 25%;
     transition: all .4s ease;
     z-index: 5;
   }
