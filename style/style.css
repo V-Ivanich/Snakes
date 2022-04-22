@@ -414,7 +414,7 @@ a {
     grid-row: 4/5;
     grid-column: 1/4;
     display: grid;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(2, 74px);
     grid-template-columns: repeat(4, auto);
   }
 
@@ -433,7 +433,6 @@ a {
   .wind_info {
     position: absolute;
     top: -240px;
-    /* left: 125px; */
     width: 250px;
     height: auto;
   }
@@ -461,7 +460,7 @@ a {
 
   .for_btn {
     display: grid;
-    grid-template-rows: 65px;
+    grid-template-rows: 60px;
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-items: center;
@@ -481,9 +480,11 @@ a {
     grid-row: 1/2;
     grid-column: 2/3;
     width: 100px;
-    height: 32px;
+    height: 50px;
     text-align: center;
     font-size: 20px;
+    margin: 0;
+    padding: 0;
   }
 
   /* ВЛЕВО */
@@ -508,10 +509,6 @@ a {
   #mBot4 {
     grid-row: 1/2;
     grid-column: 4/5;
-  }
-
-  #enter {
-    margin-bottom: 10px;
   }
 
   #mBot1,
