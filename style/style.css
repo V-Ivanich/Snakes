@@ -76,9 +76,9 @@ main {
   position: absolute;
   top: -250px;
   width: 250px;
-  height: 180px;
+  height: auto;
   border-radius: 6px;
-  padding: 15px 10px 0 15px;
+  padding: 15px 10px;
   z-index: 30;
   color: bisque;
   transition: .7s ease;
@@ -433,9 +433,9 @@ a {
   .wind_info {
     position: absolute;
     top: -240px;
-    left: 125px;
+    /* left: 125px; */
     width: 250px;
-    height: 180px;
+    height: auto;
   }
 
   .wind_info_active {
