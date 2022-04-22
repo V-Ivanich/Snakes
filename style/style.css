@@ -76,7 +76,7 @@ main {
 .wind_info {
   position: absolute;
   top: -250px;
-  left: 950px;
+  /* left: 950px; */
   width: 250px;
   height: 180px;
   border-radius: 6px;
@@ -238,14 +238,6 @@ a {
   width: 408px;
   height: 408px;
 }
-
-/* .wind_info {
-  position: absolute;
-  top: -50px;
-  left: 450px;
-  width: 250px;
-  height: 200px;
-} */
 
 .kub {
   width: 20px;
@@ -439,6 +431,21 @@ a {
     justify-content: center;
     font-size: 22px;
   }
+
+  .wind_info {
+    position: absolute;
+    top: -240px;
+    left: 240px;
+    width: 250px;
+    height: 180px;
+  }
+
+  .wind_info_active {
+    top: 65px;
+    transition: .7s ease;
+    cursor: pointer;
+  }
+
 
   .btnStart,
   .btnStop {
