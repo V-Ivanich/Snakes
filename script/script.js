@@ -27,6 +27,7 @@ const pole = document.querySelector('.container'),
   mInfo = document.querySelector('#m_info'),
   mRec = document.querySelector('#m_rec'),
   hidBody = document.querySelector('.telo'),
+  shadow = document.querySelector('.shadow'),
   rightBlock = document.querySelector('.right');
 
 
@@ -155,6 +156,7 @@ mInfo.addEventListener('click', () => {
 //? кнопка таблица мибильная
 mRec.addEventListener('click', () => {
   document.querySelector('.right').classList.toggle('right_active');
+  shadow.classList.toggle('shadow_on');
   mobileMenu();
 })
 document.querySelector('.right').onclick = () => {

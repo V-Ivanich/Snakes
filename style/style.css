@@ -35,8 +35,21 @@ body {
   position: relative;
 }
 
-.noneDis {
-  display: none;
+.shadow {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(224, 188, 188, 0.603);
+  visibility: hidden;
+  min-height: 200px;
+  top: 0;
+  left: 0;
+}
+
+.shadow_on {
+  visibility: visible;
+  width: 100%;
+  height: 100%;
+  transition: .3s ease;
 }
 
 .hiden {
@@ -441,6 +454,7 @@ a {
     top: 65px;
     transition: .7s ease;
     cursor: pointer;
+    z-index: 10;
   }
 
 
@@ -644,6 +658,7 @@ a {
     top: 60px;
     left: 50%;
     transition: all .4s ease;
+    z-index: 5;
   }
 }
 
