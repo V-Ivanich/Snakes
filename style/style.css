@@ -28,12 +28,11 @@ a:active {
 
 html {
   background-color: rgba(136, 169, 196, 0.815);
-  display: block;
 }
 
 body {
-  display: block;
   font-family: 'Balsamiq Sans', cursive;
+  position: relative;
 }
 
 .noneDis {
@@ -76,7 +75,6 @@ main {
 .wind_info {
   position: absolute;
   top: -250px;
-  /* left: 950px; */
   width: 250px;
   height: 180px;
   border-radius: 6px;
@@ -435,7 +433,7 @@ a {
   .wind_info {
     position: absolute;
     top: -240px;
-    left: 240px;
+    left: 125px;
     width: 250px;
     height: 180px;
   }

@@ -179,8 +179,10 @@ mBot2.onclick = () => {
   } else return;
 }
 
-function infoWindow() {
-  windOws.classList.toggle('wind_info_active');
+window.addEventListener('resize', () => {
   let posX = heder.offsetWidth;
   windOws.style.left = posX - 250 + 'px';
+})
+function infoWindow() {
+  windOws.classList.toggle('wind_info_active');
 }

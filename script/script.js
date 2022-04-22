@@ -59,6 +59,9 @@ function randOm(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+let posX = heder.offsetWidth;
+windOws.style.left = posX - 250 + 'px';
+
 //? переключение языка
 rus.addEventListener('click', () => {
   ru_us = 'ru';
