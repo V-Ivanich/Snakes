@@ -74,17 +74,6 @@ main {
   position: relative;
 }
 
-.mobBtn {
-  display: flex;
-  width: 50px;
-  height: 50px;
-  border: 2px solid black;
-  border-radius: 100%;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-}
-
 .wind_info {
   position: absolute;
   top: -250px;
@@ -437,7 +426,6 @@ a {
     height: 70px;
     border: 2px solid black;
     border-radius: 100%;
-    padding: 5px;
     align-items: center;
     justify-content: center;
     font-size: 22px;
@@ -510,19 +498,19 @@ a {
   /* ВНИЗ */
   #mBot2 {
     grid-row: 2/3;
-    grid-column: 3/4;
+    grid-column: 2/3;
   }
 
   /* ВПРАВО */
   #mBot3 {
-    grid-row: 2/3;
-    grid-column: 2/3;
+    grid-row: 1/2;
+    grid-column: 4/5;
   }
 
   /* ВВЕРХ */
   #mBot4 {
-    grid-row: 1/2;
-    grid-column: 4/5;
+    grid-row: 2/3;
+    grid-column: 3/4;
   }
 
   #mBot1,

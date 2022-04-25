@@ -97,7 +97,8 @@ windOws.classList.add('wind_info');
 //* клик по инфо окну для скытия
 windOws.onclick = () => {
   windOws.classList.toggle('wind_info_active');
-  shadow.classList.toggle('shadow_on');
+  if (widthWindow <= 425)
+    shadow.classList.toggle('shadow_on');
 }
 
 //? массив для div-ов
