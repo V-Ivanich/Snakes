@@ -60,7 +60,7 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-rows: 80px 1fr 65px 210px;
+  grid-template-rows: 80px 1fr 54px 210px;
   grid-template-columns: .8fr 1fr .8fr;
 }
 
@@ -428,7 +428,7 @@ a {
     border-radius: 100%;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
+    font-size: 32px;
   }
 
 
@@ -463,7 +463,7 @@ a {
 
   .for_btn {
     display: grid;
-    grid-template-rows: 60px;
+    grid-template-rows: 52px;
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-items: center;
