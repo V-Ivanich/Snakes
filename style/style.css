@@ -428,6 +428,7 @@ a {
     border-radius: 100%;
     align-items: center;
     justify-content: center;
+    z-index: 4;
     font-size: 32px;
     transition: all .3s ease;
   }
