@@ -16,7 +16,6 @@ const pole = document.querySelector('.container'),
   m_usa = document.querySelector('#m_us'),
   ochi = document.querySelector('.ochKi'),
   mobBtn = document.querySelector('#block_btn'),
-  // mButton = document.querySelectorAll('.mobBtn'),
   mobLeft = document.querySelector('#mBot1'),
   mobRight = document.querySelector('#mBot3'),
   mobUp = document.querySelector('#mBot4'),
@@ -30,6 +29,7 @@ const pole = document.querySelector('.container'),
   hidBody = document.querySelector('.telo'),
   shadow = document.querySelector('.shadow'),
   rightBlock = document.querySelector('.right');
+
 
 records.rows[0].style.background = 'rgba(190, 180, 147, 0.66)';
 
@@ -287,3 +287,4 @@ mBot2.onclick = () => {
     flag = 2;
   } else return;
 }
+
