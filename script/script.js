@@ -16,6 +16,7 @@ const pole = document.querySelector('.container'),
   m_usa = document.querySelector('#m_us'),
   ochi = document.querySelector('.ochKi'),
   mobBtn = document.querySelector('#block_btn'),
+  // mButton = document.querySelectorAll('.mobBtn'),
   mobLeft = document.querySelector('#mBot1'),
   mobRight = document.querySelector('#mBot3'),
   mobUp = document.querySelector('#mBot4'),
@@ -29,7 +30,6 @@ const pole = document.querySelector('.container'),
   hidBody = document.querySelector('.telo'),
   shadow = document.querySelector('.shadow'),
   rightBlock = document.querySelector('.right');
-
 
 records.rows[0].style.background = 'rgba(190, 180, 147, 0.66)';
 
@@ -262,3 +262,28 @@ document.onkeydown = function (event) {
   }
 }
 
+//? сканирование мобильных клавиш, "стрелок"
+
+mBot1.onclick = () => {
+  if (flag != 1) {
+    flag = 3;
+  } else return;
+}
+
+mBot3.onclick = () => {
+  if (flag != 3) {
+    flag = 1;
+  } else return;
+}
+
+mBot4.onclick = () => {
+  if (flag != 2) {
+    flag = 4;
+  } else return;
+}
+
+mBot2.onclick = () => {
+  if (flag != 4) {
+    flag = 2;
+  } else return;
+}
