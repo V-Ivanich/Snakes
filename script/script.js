@@ -61,7 +61,15 @@ function randOm(min, max) {
 }
 
 let posX = heder.offsetWidth;
-windOws.style.left = posX - 250 + 'px';
+if (posX <= 425) {
+  let w = posX / 2;
+  posX = w - 125;
+  windOws.style.left = posX + 'px';
+}
+else
+  windOws.style.left = posX - 250 + 'px';
+
+
 
 //? переключение языка
 rus.addEventListener('click', () => {
@@ -261,30 +269,4 @@ document.onkeydown = function (event) {
     } else return;
   }
 }
-
-//? сканирование мобильных клавиш, "стрелок"
-
-// mBot1.addEventListener('touchstart', () => {
-//   if (flag != 1) {
-//     flag = 3;
-//   } else return;
-// })
-
-// mBot3.addEventListener('touchstart', () => {
-//   if (flag != 3) {
-//     flag = 1;
-//   } else return;
-// })
-
-// mBot4.addEventListener('touchstart', () => {
-//   if (flag != 2) {
-//     flag = 4;
-//   } else return;
-// })
-
-// mBot2.addEventListener('touchstart', () => {
-//   if (flag != 4) {
-//     flag = 2;
-//   } else return;
-// })
 

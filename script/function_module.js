@@ -182,6 +182,7 @@ mBot2.onclick = () => {
 window.addEventListener('resize', () => {
   let posX = heder.offsetWidth;
   if (posX <= 425) {
+    posX = window.outerWidth;
     let w = posX / 2;
     posX = w - 125;
     windOws.style.left = posX + 'px';
