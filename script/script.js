@@ -34,6 +34,7 @@ const pole = document.querySelector('.container'),
 records.rows[0].style.background = 'rgba(190, 180, 147, 0.66)';
 
 let time,
+  gameSpeed = 0,
   posMass,
   foo,
   forSnake,
@@ -130,6 +131,7 @@ function startRestart() {
   forSnake = [];
   legthSnake = 3;
   flag = 1;
+  gameSpeed = 0;
   gameScore = 0;
   posCol = 2;
   posRow = 10;
@@ -201,7 +203,7 @@ btnSt.addEventListener('click', () => { //? стоп
     hidBody.classList.remove('hiden');
   } else {
     btnFlag = 0;
-    time = setInterval(frame, 330);
+    time = setInterval(frame, 330 - gameSpeed);
     btnSt.innerHTML = lang['stop'][ru_us];
     frame();
     hidBody.classList.add('hiden');
@@ -240,10 +242,17 @@ function resetClass(flagSet, pos_1, pos_2) {
     gameScore += 5;
     lZmei.innerHTML = legthSnake;
     ochi.innerHTML = gameScore;
+    upSpeed(gameScore);
     foods();
   }
   bodySnake();
-
+}
+function upSpeed(scor) {
+  if ((scor % 100) == 0) {
+    clearInterval(time);
+    gameSpeed += 50;
+    time = setInterval(frame, 330 - gameSpeed);
+  }
 }
 
 //? сканирование клавиш, "стрелок"
