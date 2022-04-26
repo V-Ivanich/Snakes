@@ -691,7 +691,7 @@ a {
   display: inline-block;
   zoom: 1;
   /* масштабирование и *display = ie7 хак для отображения display:inline-block */
-/* *display: inline;
+/* display: inline;
   vertical-align: baseline;
   margin: 0 2px;
   outline: none;

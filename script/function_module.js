@@ -154,6 +154,30 @@ function resetClass(flagSet, pos_1, pos_2) {
     return;
   }
 }
+//? сканирование мобильных клавиш, "стрелок"
+mBot1.onclick = () => {
+  if (flag != 1) {
+    flag = 3;
+  } else return;
+}
+
+mBot3.onclick = () => {
+  if (flag != 3) {
+    flag = 1;
+  } else return;
+}
+
+mBot4.onclick = () => {
+  if (flag != 2) {
+    flag = 4;
+  } else return;
+}
+
+mBot2.onclick = () => {
+  if (flag != 4) {
+    flag = 2;
+  } else return;
+}
 
 window.addEventListener('resize', () => {
   let posX = heder.offsetWidth;
