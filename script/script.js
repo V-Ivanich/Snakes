@@ -264,27 +264,27 @@ document.onkeydown = function (event) {
 
 //? сканирование мобильных клавиш, "стрелок"
 
-mBot1.onclick = () => {
+mBot1.addEventListener('click touchstart', () => {
   if (flag != 1) {
     flag = 3;
   } else return;
-}
+})
 
-mBot3.onclick = () => {
+mBot3.addEventListener('click touchstart', () => {
   if (flag != 3) {
     flag = 1;
   } else return;
-}
+})
 
-mBot4.onclick = () => {
+mBot4.addEventListener('click touchstart', () => {
   if (flag != 2) {
     flag = 4;
   } else return;
-}
+})
 
-mBot2.onclick = () => {
+mBot2.addEventListener('click touchstart', () => {
   if (flag != 4) {
     flag = 2;
   } else return;
-}
+})
 
