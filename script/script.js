@@ -94,7 +94,7 @@ function start() {
 }
 
 windOws.classList.add('wind_info');
-//* клик по инфо окну для скытия
+//* клик по инфо окну для скрытия
 windOws.onclick = () => {
   windOws.classList.toggle('wind_info_active');
   if (widthWindow <= 425)

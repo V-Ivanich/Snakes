@@ -103,6 +103,7 @@ th {
   text-align: center;
 }
 
+
 .logo {
   grid-column: 1 / 2;
 }
@@ -679,6 +680,9 @@ a {
     left: 25%;
     transition: all .4s ease;
     z-index: 5;
+    background-color: cadetblue;
+    border-radius: 5px;
+    padding: 10px;
   }
 }
 
