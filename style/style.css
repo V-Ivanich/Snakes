@@ -385,6 +385,9 @@ a {
 @media (max-width: 425px) {
   main {
     margin: 0 auto;
+    display: grid;
+    grid-template-rows: 56px 1fr 60px 170px;
+    grid-template-columns: .8fr 1fr .8fr;
   }
 
   h2 {
@@ -416,7 +419,7 @@ a {
     grid-row: 4/5;
     grid-column: 1/4;
     display: grid;
-    grid-template-rows: repeat(2, 74px);
+    grid-template-rows: repeat(2, 82px);
     grid-template-columns: repeat(4, auto);
   }
 
@@ -432,30 +435,24 @@ a {
     transition: all .3s ease;
   }
 
+  .btnLeft,
+  .btnRight,
+  .btnDown,
+  .btnUp {
+    width: 40px;
+    height: 40px;
+    color: rgb(174, 217, 245);
+  }
+
   .btnLeft {
-    width: 50px;
-    height: 50px;
-    color: azure;
     transform: rotate(180deg);
   }
 
   .btnDown {
-    width: 50px;
-    height: 50px;
-    color: azure;
     transform: rotate(90deg);
   }
 
-  .btnRight {
-    width: 50px;
-    height: 50px;
-    color: azure;
-  }
-
   .btnUp {
-    width: 50px;
-    height: 50px;
-    color: azure;
     transform: rotate(-90deg);
   }
 
@@ -552,7 +549,7 @@ a {
   #mBot2,
   #mBot3,
   #mBot4 {
-    align-self: center;
+    align-self: end;
     justify-self: center;
     background-color: rgb(132, 172, 172);
   }
