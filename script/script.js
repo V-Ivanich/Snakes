@@ -179,6 +179,8 @@ document.querySelector('.right').onclick = () => {
 btn.addEventListener('click', () => { //? старт
   gameOver.classList.remove('over_active');
   hidBody.classList.add('hiden');
+  btnFlag = 0;
+  btnSt.innerHTML = lang['stop'][ru_us];
   divClear();
   startRestart();
   bodySnake();
