@@ -247,6 +247,8 @@ function resetClass(flagSet, pos_1, pos_2) {
   }
   bodySnake();
 }
+//? Увеличение скорости относительно очков
+//? через каждые 100
 function upSpeed(scor) {
   if ((scor % 100) == 0) {
     clearInterval(time);
