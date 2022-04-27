@@ -1,9 +1,8 @@
 
 .container
   overflow: hidden
-  grid-column: 2 / 3
-
-.container
+  grid-row: 2/3
+  grid-column: 2/3
   position: relative
   border: 4px solid rgba(70, 125, 151, 0.692)
   margin: 30px
@@ -28,3 +27,28 @@
 
 .food
   background-color: rgb(20, 136, 49)
+
+@media (max-width: 425px)
+  .kub
+    width: 15px
+    height: 15px
+    background-color: rgba(164, 182, 116, 0.918)
+    transition: all .1s ease
+
+  .kub_activ
+    background-color: rgba(48, 41, 107, 0.644)
+    transition: all .2s ease
+
+  .food
+    background-color: rgb(20, 136, 49)
+
+  .container
+    grid-row: 2/3
+    grid-column: 1/end
+    position: relative
+    margin: 5px auto
+    display: grid
+    grid-template: repeat(20, 15px) / repeat(20, 15px)
+    grid-auto-flow: row
+    width: 308px
+    height: 308px

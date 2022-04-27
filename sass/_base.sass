@@ -40,18 +40,6 @@ main
 .right
   padding-top: 40px
 
-.left
-  grid-row: 2/3
-  grid-column: 1/2
-
-.container
-  grid-row: 2/3
-  grid-column: 2/3
-
-.right
-  grid-row: 2/3
-  grid-column: 3/4
-
 .hiden
   overflow: hidden
 
@@ -67,3 +55,17 @@ h2
   font-stretch: expanded
   font-size: xx-large
   color: rgba(48, 41, 107, 0.644)
+
+@media (max-width: 425px)
+  main
+    margin: 0 auto
+    display: grid
+    grid-template-rows: 56px 1fr 60px 170px
+    grid-template-columns: .8fr 1fr .8fr
+
+  h2
+    font-size: large
+
+  label,
+  .mobBtn
+    font-size: small

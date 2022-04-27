@@ -1,4 +1,14 @@
 
+.right
+  grid-row: 2/3
+  grid-column: 3/4
+
+.absolut
+  position: absolute
+  top: -300%
+  left: 50%
+  transition: all .8s ease-in-out
+
 tr,
 td,
 th
@@ -7,3 +17,13 @@ th
   height: 28px
   width: 50px
   text-align: center
+
+@media (max-width: 425px)
+  .right_active
+    top: 60px
+    left: 25%
+    transition: all .4s ease
+    z-index: 5
+    background-color:  cadetblue
+    border-radius: 5px
+    padding: 10px

@@ -30,3 +30,59 @@
 
 .noVisible
   display: none
+
+@media (max-width: 425px)
+  .mob_menu
+    grid-row: 1/2
+    grid-column: 3/4
+    z-index: 3
+    display: block
+    position: relative
+    width: 30px
+    height: 18px
+    cursor: pointer
+    &::after,
+    &::before
+      content: ""
+    &::after
+      bottom: 0
+    &::before
+      top: 0
+
+  .record_mob
+    grid-row: 2/3
+    grid-column: 3/4
+
+  .mob_menu span,
+  .mob_menu::before,
+  .mob_menu::after
+    left: 0
+    position: absolute
+    height: 10%
+    width: 100%
+    transition: all .3s ease 0s
+    background-color: rgba(48, 41, 107, 0.644)
+
+  .mob_menu span
+    top: 50%
+    transform: scale(1) translate(0px, -50%)
+
+  .mob_menu._active
+    span
+      transform: scale(0) translate(0px, -50%)
+    &::before
+      top: 50%
+      transform: rotate(-45deg) translate(0px, -50%)
+    &::after
+      top: 50%
+      transform: rotate(45deg) translate(0px, -50%)
+
+  .points_snake
+    justify-self: center
+    grid-row: 2/3
+    grid-column: 1/2
+
+  .points_result
+    justify-self: center
+    grid-row: 2/3
+    grid-column: 2/3

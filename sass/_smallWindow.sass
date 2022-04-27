@@ -31,12 +31,6 @@
   transition: .7s ease
   cursor: pointer
 
-.absolut
-  position: absolute
-  top: -300%
-  left: 50%
-  transition: all .8s ease-in-out
-
 .over
   position: absolute
   background-color: rgb(135, 190, 207)
@@ -68,3 +62,16 @@
 
   100%
     opacity: 1
+
+@media (max-width: 425px)
+  .wind_info
+    position: absolute
+    top: -240px
+    width: 250px
+    height: auto
+
+  .wind_info_active
+    top: 65px
+    transition: .7s ease
+    cursor: pointer
+    z-index: 10
