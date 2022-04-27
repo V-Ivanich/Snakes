@@ -1,0 +1,70 @@
+
+.shadow
+  position: absolute
+  z-index: 1
+  background-color: rgba(143, 188, 215, 0.584)
+  visibility: hidden
+  min-height: 200px
+  top: 0
+  left: 0
+
+.shadow_on
+  visibility: visible
+  width: 100%
+  height: 100%
+  transition: .3s ease
+
+.wind_info
+  position: absolute
+  top: -250px
+  width: 250px
+  height: auto
+  border-radius: 6px
+  padding: 15px 10px
+  z-index: 30
+  color: bisque
+  transition: .7s ease
+  background-color: rgba(116, 147, 231, 0.781)
+
+.wind_info_active
+  top: 82px
+  transition: .7s ease
+  cursor: pointer
+
+.absolut
+  position: absolute
+  top: -300%
+  left: 50%
+  transition: all .8s ease-in-out
+
+.over
+  position: absolute
+  background-color: rgb(135, 190, 207)
+  border: 2px solid black
+  border-radius: 5px
+  padding: 10px
+  width: 100%
+  top: 40%
+  left: 0
+  opacity: 0
+
+.over_active
+  animation-duration: 1.5s
+  animation-name: vizi
+  opacity: 1
+
+@keyframes vizi
+  0%
+    opacity: 0
+
+  25%
+    opacity: 0.1
+
+  50%
+    opacity: 0.5
+
+  75%
+    opacity: 0.7
+
+  100%
+    opacity: 1

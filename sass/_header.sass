@@ -1,0 +1,76 @@
+
+.header
+  grid-row: 1 / 2
+  grid-column: 1 / end
+  background-color: rgba(116, 101, 156, 0.548)
+  border-radius: 5px
+  display: grid
+  grid-template: 70px / repeat(4, 0.8fr) repeat(3, .4fr)
+  position: relative
+
+.logo
+  grid-column: 1 / 2
+
+label,
+a
+  font-size: 20px
+  color: rgba(48, 41, 107, 0.644)
+
+  //? логотип червяка
+.hed
+  height: 25px
+  width: 25px
+  margin-top: 1px
+
+.bod_2
+  height: 20px
+  width: 20px
+  margin-top: 1px
+
+.bod_3
+  height: 18px
+  width: 18px
+  margin-top: 7px
+
+.tail_2
+  height: 14px
+  width: 14px
+  margin-top: 5px
+
+.tail
+  height: 10px
+  width: 10px
+  margin-top: 1px
+
+
+.title,
+.titleH2
+  grid-column: 2 / 3
+
+.points_snake
+  grid-column: 3 / 4
+
+.points_result
+  grid-column: 4 / 5
+
+.info
+  grid-column: 6/7
+
+.logo
+  display: flex
+  justify-content: end
+  span
+    background-color: rgba(222, 167, 135, 0.884)
+    border: 1px solid black
+    border-radius: 50%
+
+.logo,
+.title,
+.points_snake,
+.points_result,
+.language,
+.mob_menu,
+.record_mob,
+.info
+  align-self: center
+  justify-self: center
