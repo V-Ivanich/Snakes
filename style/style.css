@@ -315,11 +315,13 @@ a {
 .btnStart:hover,
 .btnStop:hover {
   background-color: #e0e4a6;
+  color: rgba(48, 41, 107, 0.644);
 }
 
 .btnStart:active,
 .btnStop:active {
   background-color: #dbaf6d;
+  color: rgba(48, 41, 107, 0.644);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
