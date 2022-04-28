@@ -54,6 +54,7 @@ if (scoreGame) {
   scoreGame = JSON.parse(scoreGame);
   moving();
 } else scoreGame = [];
+
 //? функция случайных чисел
 function randOm(min, max) {
   min = Math.ceil(min);
@@ -110,7 +111,7 @@ windOws.onclick = () => {
     shadow.classList.toggle('shadow_on');
 }
 
-//? массив для div-ов
+//? массив для div-ов (поле)
 const massiv = [];
 for (let i = 0; i < 20; i++) {
   massiv.push([0]);
@@ -150,6 +151,7 @@ function mobileMenu() {
   subMenu.classList.toggle('sub_active');
 }
 
+//? очистка поля
 function divClear() {
   let div_i = document.querySelectorAll('.kub');
   for (let item of div_i) {

@@ -22,12 +22,14 @@ function results() {
   document.querySelector('.mob_rec').innerHTML = mobileRecord;
   moving();
 }
+
 //? заполнение таблицы рекордов
 function moving() {
   for (let i = 0; i < scoreGame.length; i++) {
     records.rows[i + 1].cells[0].innerHTML = scoreGame[i][0];
     records.rows[i + 1].cells[1].innerHTML = scoreGame[i][1];
     records.rows[i + 1].cells[2].innerHTML = scoreGame[i][2];
+    document.querySelector('.mob_rec').innerHTML = scoreGame[0][0] + '-' + scoreGame[0][2];
   }
 }
 //! рождение и рост змеи
@@ -131,29 +133,7 @@ function resazeWindow() {
   }
 }
 
-//? смена класса у div-ов
-function resetClass(flagSet, pos_1, pos_2) {
 
-  if (flagSet == 1) {
-    posRow += pos_1;
-    posCol += pos_2;
-  }
-  else {
-    posRow -= pos_1;
-    posCol -= pos_2;
-  }
-  let x = posMass[posMass.length - 1][0];
-  let y = posMass[posMass.length - 1][1];
-  hedSnake = massiv[x][y];
-  hedSnake.classList.remove('kub_activ');
-
-  if (scanBody(posRow, posCol)) {
-    clearInterval(time);
-    gameOver.classList.add('over_active');
-    results();
-    return;
-  }
-}
 //? сканирование мобильных клавиш, "стрелок"
 mBot1.onclick = () => {
   if (flag != 1) {
