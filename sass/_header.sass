@@ -8,9 +8,10 @@
   grid-template: 70px / .8fr .5fr .5fr .8fr
   position: relative
 
-// .logotip img
-//   height: 65px
-//   width: 230px
+.logotip
+  height: 52px
+  width: 150px
+  background-image: url(/img/logotip.png)
 
 .logo
   grid-column: 1 / 2
@@ -30,55 +31,23 @@ a
   font-size: 20px
   color: $bodySnake
 
-  //? логотип червяка
-.hed
-  height: 25px
-  width: 25px
-  margin-top: 1px
-
-.bod_2
-  height: 20px
-  width: 20px
-  margin-top: 1px
-
-.bod_3
-  height: 18px
-  width: 18px
-  margin-top: 7px
-
-.tail_2
-  height: 14px
-  width: 14px
-  margin-top: 5px
-
-.tail
-  height: 10px
-  width: 10px
-  margin-top: 1px
-
 .points_snake
   grid-row: 6/7
-  grid-column: 1/2
-  padding-left: 15px
+  grid-column: 2/3
+  display: flex
+  justify-self: start
 
 .points_result
   grid-row: 6/7
   grid-column: 2/3
+  display: flex
+  justify-self: end
 
 .record_mob
   padding-right: 15px
 
-.logo
-  display: flex
-  justify-content: end
-  span
-    background-color: $logo
-    border: 1px solid black
-    border-radius: 50%
 
 .logo,
-.points_snake,
-.points_result,
 .language,
 .mob_menu,
 .record_mob,
@@ -103,6 +72,11 @@ a
     margin-left: 10px
     grid-row: 1/2
     grid-column: 1/2
+
+  .logotip
+    height: 28px
+    width: 80px
+    background-image: url(/img/mini_logotip.png)
 
   .titleH2
     justify-content: center
