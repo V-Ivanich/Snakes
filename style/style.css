@@ -111,7 +111,7 @@ h2 {
 .logotip {
   height: 52px;
   width: 150px;
-  background-image: url(/img/logotip.png);
+  background-image: url(../img/logotip.png);
 }
 
 .logo {
@@ -156,6 +156,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   justify-self: start;
+  color: #757ac0b9;
 }
 
 .points_result {
@@ -169,6 +170,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   justify-self: end;
+  color: #757ac0b9;
 }
 
 .record_mob {
@@ -220,7 +222,7 @@ a {
   .logotip {
     height: 28px;
     width: 80px;
-    background-image: url(/img/mini_logotip.png);
+    background-image: url(../img/mini_logotip.png);
   }
   .titleH2 {
     -webkit-box-pack: center;
