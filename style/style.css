@@ -268,11 +268,12 @@ a {
   margin-left: auto;
   width: 100px;
   height: 28px;
-  background-color: darkkhaki;
-  border: 1px solid black;
-  border-radius: 3px;
+  background-color: #757ac0b9;
+  border: 1px solid rgba(48, 41, 107, 0.644);
+  border-radius: 4px;
   font-family: 'Anton', sans-serif;
   font-size: 18px;
+  color: #e0e4a6;
 }
 
 .btnStart:hover,
@@ -292,8 +293,12 @@ a {
   width: 100px;
   height: 28px;
   text-align: center;
-  background-color: #7cd1c6;
-  border: 1px solid black;
+  border: none;
+  border-bottom: 1px solid rgba(48, 41, 107, 0.644);
+  border-radius: 2px;
+  background-color: transparent;
+  color: rgba(48, 41, 107, 0.644);
+  outline: none;
   font-size: 18px;
   display: block;
   margin-left: auto;
@@ -508,7 +513,7 @@ th {
   color: bisque;
   -webkit-transition: .7s ease;
   transition: .7s ease;
-  background-color: rgba(116, 147, 231, 0.781);
+  background-color: rgba(70, 125, 151, 0.692);
 }
 
 .wind_info_active {
@@ -520,7 +525,7 @@ th {
 
 .over {
   position: absolute;
-  background-color: #87becf;
+  background-color: rgba(70, 125, 151, 0.692);
   border: 2px solid black;
   border-radius: 5px;
   padding: 10px;
@@ -616,7 +621,7 @@ th {
 }
 
 .s_menu {
-  color: #364172;
+  color: rgba(70, 125, 151, 0.692);
   cursor: pointer;
   margin: 20px 10px;
   font-size: 1.2em;

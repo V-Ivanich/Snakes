@@ -2,7 +2,7 @@
 .header
   grid-row: 1 / 2
   grid-column: 1 / end
-  background-color: rgba(116, 101, 156, 0.548)
+  background-color: $header
   border-radius: 5px
   display: grid
   grid-template: 70px / repeat(4, 0.8fr) repeat(3, .4fr)
@@ -14,7 +14,7 @@
 label,
 a
   font-size: 20px
-  color: rgba(48, 41, 107, 0.644)
+  color: $bodySnake
 
   //? логотип червяка
 .hed
@@ -60,7 +60,7 @@ a
   display: flex
   justify-content: end
   span
-    background-color: rgba(222, 167, 135, 0.884)
+    background-color: $logo
     border: 1px solid black
     border-radius: 50%
 
@@ -78,7 +78,7 @@ a
 @media (max-width: 425px)
   .header
     max-height: 55px
-    background-color: rgba(116, 101, 156, 0.548)
+    background-color: $header
     display: grid
     grid-template-rows: 32px 22px
     grid-template-columns: .5fr .5fr .3fr

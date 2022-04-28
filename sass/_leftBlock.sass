@@ -13,15 +13,16 @@
   margin-left: auto
   width: 100px
   height: 28px
-  background-color: darkkhaki
-  border: 1px solid black
-  border-radius: 3px
+  background-color: $btnColor
+  border: 1px solid $colorTitle
+  border-radius: 4px
   font-family: 'Anton', sans-serif
   font-size: 18px
+  color: $btnHov
   &:hover
-    background-color: rgb(224, 228, 166)
+    background-color: $btnHov
   &:active
-    background-color: rgb(219, 175, 109)
+    background-color: $btnAct
     transition: all 0.5s
 
 #enter
@@ -29,8 +30,12 @@
   width: 100px
   height: 28px
   text-align: center
-  background-color: rgb(124, 209, 198)
-  border: 1px solid black
+  border: none
+  border-bottom: 1px solid $colorTitle
+  border-radius: 2px
+  background-color: transparent
+  color: $colorTitle
+  outline: none
   font-size: 18px
   display: block
   margin-left: auto
