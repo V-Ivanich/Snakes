@@ -80,8 +80,8 @@ h2 {
     margin: 0 auto;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 56px 1fr 60px 170px;
-        grid-template-rows: 56px 1fr 60px 170px;
+    -ms-grid-rows: 56px 1fr 60px 170px 30px;
+        grid-template-rows: 56px 1fr 60px 170px 30px;
     -ms-grid-columns: .8fr 1fr .8fr;
         grid-template-columns: .8fr 1fr .8fr;
   }
@@ -104,8 +104,8 @@ h2 {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 70px;
-  -ms-grid-columns: (0.8fr)[4] (0.4fr)[3];
-      grid-template: 70px/repeat(4, 0.8fr) repeat(3, 0.4fr);
+  -ms-grid-columns: .8fr .5fr .5fr .8fr;
+      grid-template: 70px / .8fr .5fr .5fr .8fr;
   position: relative;
 }
 
@@ -113,6 +113,25 @@ h2 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
+}
+
+.title,
+.titleH2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+}
+
+.language {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+}
+
+.info {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / 5;
 }
 
 label,
@@ -151,29 +170,22 @@ a {
   margin-top: 1px;
 }
 
-.title,
-.titleH2 {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
-}
-
 .points_snake {
-  -ms-grid-column: 3;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 1;
+  grid-row: 6/7;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 1;
-  grid-column: 3 / 4;
+  grid-column: 1/2;
 }
 
 .points_result {
-  -ms-grid-column: 4;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 1;
+  grid-row: 6/7;
+  -ms-grid-column: 2;
   -ms-grid-column-span: 1;
-  grid-column: 4 / 5;
-}
-
-.info {
-  -ms-grid-column: 6;
-  -ms-grid-column-span: 1;
-  grid-column: 6/7;
+  grid-column: 2/3;
 }
 
 .logo {
@@ -212,8 +224,8 @@ a {
     background-color: rgba(116, 101, 156, 0.548);
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 32px 22px;
-        grid-template-rows: 32px 22px;
+    -ms-grid-rows: 54px;
+        grid-template-rows: 54px;
     -ms-grid-columns: .5fr .5fr .3fr;
         grid-template-columns: .5fr .5fr .3fr;
     position: relative;
@@ -245,6 +257,21 @@ a {
   .language,
   .info {
     display: none;
+  }
+  .record_mob {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+  }
+  .mob_rec,
+  .ochKi,
+  .resUlt,
+  .zmi,
+  .lenSnake {
+    color: #757ac0b9;
   }
 }
 
@@ -659,14 +686,6 @@ th {
   .mob_menu::before {
     top: 0;
   }
-  .record_mob {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-row: 2/3;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 1;
-    grid-column: 3/4;
-  }
   .mob_menu span,
   .mob_menu::before,
   .mob_menu::after {
@@ -700,9 +719,9 @@ th {
   .points_snake {
     -ms-grid-column-align: center;
         justify-self: center;
-    -ms-grid-row: 2;
+    -ms-grid-row: 6;
     -ms-grid-row-span: 1;
-    grid-row: 2/3;
+    grid-row: 6/7;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
@@ -710,9 +729,9 @@ th {
   .points_result {
     -ms-grid-column-align: center;
         justify-self: center;
-    -ms-grid-row: 2;
+    -ms-grid-row: 6;
     -ms-grid-row-span: 1;
-    grid-row: 2/3;
+    grid-row: 6/7;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
