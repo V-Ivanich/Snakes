@@ -79,8 +79,8 @@ h2 {
     margin: 0 auto;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 56px 1fr 60px 170px 30px;
-        grid-template-rows: 56px 1fr 60px 170px 30px;
+    -ms-grid-rows: 56px 1fr 60px 160px 30px;
+        grid-template-rows: 56px 1fr 60px 160px 30px;
     -ms-grid-columns: .8fr 1fr .8fr;
         grid-template-columns: .8fr 1fr .8fr;
   }
@@ -267,9 +267,9 @@ a {
     display: none;
   }
   .record_mob {
-    -ms-grid-row: 6;
+    -ms-grid-row: 5;
     -ms-grid-row-span: 1;
-    grid-row: 6/7;
+    grid-row: 5/6;
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3/4;
@@ -468,7 +468,7 @@ a {
     grid-row: 2/3;
     grid-column: 1/end;
     position: relative;
-    margin: 5px auto;
+    margin: 5% auto;
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: (15px)[20];
@@ -728,9 +728,9 @@ th {
   .points_snake {
     -ms-grid-column-align: center;
         justify-self: center;
-    -ms-grid-row: 6;
+    -ms-grid-row: 5;
     -ms-grid-row-span: 1;
-    grid-row: 6/7;
+    grid-row: 5/6;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
@@ -738,9 +738,9 @@ th {
   .points_result {
     -ms-grid-column-align: center;
         justify-self: center;
-    -ms-grid-row: 6;
+    -ms-grid-row: 5;
     -ms-grid-row-span: 1;
-    grid-row: 6/7;
+    grid-row: 5/6;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -757,21 +757,34 @@ th {
     grid-column: 1/4;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: (82px)[2];
-        grid-template-rows: repeat(2, 82px);
+    -ms-grid-rows: (78px)[2];
+        grid-template-rows: repeat(2, 78px);
     -ms-grid-columns: (auto)[4];
         grid-template-columns: repeat(4, auto);
   }
   #mBot1,
-  #mBot2,
-  #mBot3,
-  #mBot4 {
+  #mBot3 {
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;
     -ms-grid-column-align: center;
         justify-self: center;
     background-color: #84acac;
+  }
+  #mBot2,
+  #mBot4 {
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    background-color: #84acac;
+  }
+  #mBot2 {
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+  #mBot4 {
+    -ms-grid-column-align: end;
+        justify-self: end;
   }
   .mobBtn {
     display: -webkit-box;

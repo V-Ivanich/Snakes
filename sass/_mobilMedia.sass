@@ -4,16 +4,25 @@
     grid-row: 4/5
     grid-column: 1/4
     display: grid
-    grid-template-rows: repeat(2, 82px)
+    grid-template-rows: repeat(2, 78px)
     grid-template-columns: repeat(4, auto)
 
   #mBot1,
-  #mBot2,
-  #mBot3,
-  #mBot4
+  #mBot3
     align-self: end
     justify-self: center
     background-color: $mobBtn
+
+  #mBot2,
+  #mBot4
+    align-self: start
+    background-color: $mobBtn
+
+  #mBot2
+    justify-self: start
+
+  #mBot4
+    justify-self: end
 
   .mobBtn
     display: flex
