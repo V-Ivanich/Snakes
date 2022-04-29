@@ -1,7 +1,7 @@
 
 //? вывод результата и его сравнение
 function results() {
-  scoreGame.push([inPut.value, legthSnake, gameScore]);
+  scoreGame.push([inPut.value, lengthSnake, gameScore]);
   let temp = []; //* промежуточный массив
   let maxPoint = 0; //* максимальное значение
   while (scoreGame.length != 0) {
@@ -34,7 +34,7 @@ function moving() {
 }
 //! рождение и рост змеи
 function bodySnake() {
-  if (legthSnake > posMass.length) posMass.push([0, 0]);
+  if (lengthSnake > posMass.length) posMass.push([0, 0]);
   let moveData = [];
   for (let i = posMass.length - 1; i > 0; i--) {
     moveData[i] = posMass[i - 1];

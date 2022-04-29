@@ -39,7 +39,7 @@ let time,
   posMass,
   foo,
   forSnake,
-  legthSnake,//? длина змеи
+  lengthSnake,//? длина змеи
   flag,
   gameScore,
   posCol,
@@ -120,7 +120,7 @@ for (let i = 0; i < 20; i++) {
     massiv[i][p] = 0;
   }
 }
-//? заполнение поля эл-ми
+//? заполнение поля пустыми эл-ми
 for (let i = 0; i < 20; i++) {
   for (let j = 0; j < 20; j++) {
     let dive = document.createElement('div');
@@ -131,7 +131,7 @@ for (let i = 0; i < 20; i++) {
 
 function startRestart() {
   forSnake = [];
-  legthSnake = 3;
+  lengthSnake = 3;
   flag = 1;
   gameSpeed = 0;
   gameScore = 0;
@@ -194,7 +194,7 @@ btn.addEventListener('click', () => { //? старт
   startRestart();
   bodySnake();
   foods();
-  lZmei.innerHTML = legthSnake;
+  lZmei.innerHTML = lengthSnake;
   ochi.innerHTML = gameScore;
   clearInterval(time);
   time = setInterval(frame, 330);
@@ -223,6 +223,8 @@ btnSt.addEventListener('click', () => { //? стоп
 //! Проверка на конец игры
 function resetClass(flagSet, pos_1, pos_2) {
 
+  let x;
+  let y;
   if (flagSet == 1) {
     posRow += pos_1;
     posCol += pos_2;
@@ -231,8 +233,8 @@ function resetClass(flagSet, pos_1, pos_2) {
     posRow -= pos_1;
     posCol -= pos_2;
   }
-  let x = posMass[posMass.length - 1][0];
-  let y = posMass[posMass.length - 1][1];
+  x = posMass[posMass.length - 1][0];
+  y = posMass[posMass.length - 1][1];
   hedSnake = massiv[x][y];
   hedSnake.classList.remove('kub_activ');
 
@@ -245,19 +247,19 @@ function resetClass(flagSet, pos_1, pos_2) {
     setTimeout(closeMobTable, 2300);
     return;
   }
-
   //! проверка на захват еды
   if (forSnake[0] == posRow && forSnake[1] == posCol) {
     foo.classList.remove('food');
-    legthSnake++;
+    lengthSnake++;
     gameScore += 5;
-    lZmei.innerHTML = legthSnake;
+    lZmei.innerHTML = lengthSnake;
     ochi.innerHTML = gameScore;
     upSpeed(gameScore);
     foods();
   }
   bodySnake();
 }
+
 //? Увеличение скорости относительно очков
 //? через каждые 100
 function upSpeed(scor) {
