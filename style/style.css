@@ -703,6 +703,9 @@ th {
   .points_snake {
     -ms-grid-column-align: center;
         justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     -ms-grid-row: 5;
     -ms-grid-row-span: 1;
     grid-row: 5/6;
@@ -713,6 +716,9 @@ th {
   .points_result {
     -ms-grid-column-align: center;
         justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     -ms-grid-row: 5;
     -ms-grid-row-span: 1;
     grid-row: 5/6;
