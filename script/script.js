@@ -34,6 +34,7 @@ const pole = document.querySelector('.container'),
 records.rows[0].style.background = 'rgba(190, 180, 147, 0.66)';
 
 let time,
+  mobVersion = 0,
   gameSpeed = 0,
   posMass,
   foo,
@@ -119,7 +120,7 @@ for (let i = 0; i < 20; i++) {
     massiv[i][p] = 0;
   }
 }
-
+//? заполнение поля эл-ми
 for (let i = 0; i < 20; i++) {
   for (let j = 0; j < 20; j++) {
     let dive = document.createElement('div');
@@ -168,14 +169,18 @@ mInfo.addEventListener('click', () => {
   infoWindow();
   mobileMenu();
 })
+
 //? кнопка таблица мибильная
-mRec.addEventListener('click', () => {
+mRec.addEventListener('click', openMobTable)
+function openMobTable() {
   document.querySelector('.right').classList.toggle('right_active');
   shadow.classList.toggle('shadow_on');
   mobileMenu();
-})
+}
 
-document.querySelector('.right').onclick = () => {
+//? клик по таблице для скрытия
+document.querySelector('.right').onclick = closeMobTable;
+function closeMobTable() {
   document.querySelector('.right').classList.toggle('right_active');
   shadow.classList.toggle('shadow_on');
 }
@@ -215,6 +220,7 @@ btnSt.addEventListener('click', () => { //? стоп
 
 
 //? смена класса у div-ов
+//! Проверка на конец игры
 function resetClass(flagSet, pos_1, pos_2) {
 
   if (flagSet == 1) {
@@ -234,6 +240,9 @@ function resetClass(flagSet, pos_1, pos_2) {
     clearInterval(time);
     gameOver.classList.add('over_active');
     results();
+    document.querySelector('.right').classList.toggle('right_active');
+    shadow.classList.toggle('shadow_on');
+    setTimeout(closeMobTable, 2300);
     return;
   }
 

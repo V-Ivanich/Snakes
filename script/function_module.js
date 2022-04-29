@@ -166,9 +166,11 @@ window.addEventListener('resize', () => {
     let w = posX / 2;
     posX = w - 125;
     windOws.style.left = posX + 'px';
+    mobVersion = 1;
   }
   else {
     windOws.style.left = posX - 250 + 'px';
+    mobVersion = 0;
   }
 })
 function infoWindow() {
