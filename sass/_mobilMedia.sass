@@ -1,11 +1,37 @@
 
+._touch
+    grid-row: 2/3
+    grid-column: 1/4
+    display: grid
+    grid-template-rows: repeat(2, 78px)
+    grid-template-columns: .8fr repeat(2, .5fr) .8fr
+
+.btnLeft,
+.btnRight,
+.btnDown,
+.btnUp
+  width: 40px
+  height: 40px
+  color: $mobColor
+
+.btnDown
+  transform: rotate(90deg)
+
+.btnUp
+  transform: rotate(-90deg)
+
+.btnLeft
+  transform: rotate(180deg)
+
+
 @media (max-width: 425px)
-  .mobail_button
+  ._touch
     grid-row: 4/5
     grid-column: 1/4
     display: grid
     grid-template-rows: repeat(2, 78px)
     grid-template-columns: repeat(4, auto)
+
 
   #mBot1,
   #mBot3
@@ -35,23 +61,6 @@
     z-index: 10
     &:active
       padding-top: 2px
-
-  .btnLeft,
-  .btnRight,
-  .btnDown,
-  .btnUp
-    width: 40px
-    height: 40px
-    color: $mobColor
-
-  .btnLeft
-    transform: rotate(180deg)
-
-  .btnDown
-    transform: rotate(90deg)
-
-  .btnUp
-    transform: rotate(-90deg)
 
 
   /* ВЛЕВО */

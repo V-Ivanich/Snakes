@@ -27,10 +27,10 @@ const isMobile = {
 };
 
 if (isMobile.any()) {
-  document.body.classList.add('_touch');
+  mobBtn.classList.remove('noVisible');
 }
 else {
-  document.body.classList.add('_pc');
+  mobBtn.classList.add('noVisible');
 }
 
 //? вывод результата и его сравнение

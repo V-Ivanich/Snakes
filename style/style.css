@@ -409,12 +409,14 @@ a {
 
 .kub_activ {
   background-color: rgba(48, 41, 107, 0.644);
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
 }
 
 .heads {
   background-color: brown;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
 }
 
 .food {
@@ -729,8 +731,47 @@ th {
   }
 }
 
+._touch {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (78px)[2];
+      grid-template-rows: repeat(2, 78px);
+  -ms-grid-columns: 0.8fr (0.5fr)[2] 0.8fr;
+      grid-template-columns: 0.8fr repeat(2, 0.5fr) 0.8fr;
+}
+
+.btnLeft,
+.btnRight,
+.btnDown,
+.btnUp {
+  width: 40px;
+  height: 40px;
+  color: #aed9f5;
+}
+
+.btnDown {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.btnUp {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.btnLeft {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 @media (max-width: 425px) {
-  .mobail_button {
+  ._touch {
     -ms-grid-row: 4;
     -ms-grid-row-span: 1;
     grid-row: 4/5;
@@ -786,26 +827,6 @@ th {
   }
   .mobBtn:active {
     padding-top: 2px;
-  }
-  .btnLeft,
-  .btnRight,
-  .btnDown,
-  .btnUp {
-    width: 40px;
-    height: 40px;
-    color: #aed9f5;
-  }
-  .btnLeft {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  .btnDown {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-  }
-  .btnUp {
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
   }
   /* ВЛЕВО */
   #mBot1 {
