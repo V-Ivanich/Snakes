@@ -23,6 +23,17 @@
 .btnLeft
   transform: rotate(180deg)
 
+.mobBtn
+  display: flex
+  width: 70px
+  height: 70px
+  border: 2px solid black
+  border-radius: 100%
+  align-items: center
+  justify-content: center
+  z-index: 10
+  &:active
+    padding-top: 2px
 
 @media (max-width: 425px)
   ._touch
@@ -49,18 +60,6 @@
 
   #mBot4
     justify-self: end
-
-  .mobBtn
-    display: flex
-    width: 70px
-    height: 70px
-    border: 2px solid black
-    border-radius: 100%
-    align-items: center
-    justify-content: center
-    z-index: 10
-    &:active
-      padding-top: 2px
 
 
   /* ВЛЕВО */
